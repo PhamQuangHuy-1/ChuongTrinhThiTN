@@ -24,7 +24,7 @@ namespace DangNhap
 
         private void đăngNhậpLạiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 f = new Form1();
+            FormDangNhap f = new FormDangNhap();
             this.Hide();
             f.Show();
         }
