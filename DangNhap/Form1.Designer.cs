@@ -43,16 +43,18 @@ namespace DangNhap
             // 
             // txtTentk
             // 
-            this.txtTentk.Location = new System.Drawing.Point(322, 338);
+            this.txtTentk.Location = new System.Drawing.Point(362, 422);
+            this.txtTentk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTentk.Name = "txtTentk";
-            this.txtTentk.Size = new System.Drawing.Size(258, 22);
+            this.txtTentk.Size = new System.Drawing.Size(290, 26);
             this.txtTentk.TabIndex = 2;
             // 
             // txtMatkhau
             // 
-            this.txtMatkhau.Location = new System.Drawing.Point(322, 392);
+            this.txtMatkhau.Location = new System.Drawing.Point(362, 490);
+            this.txtMatkhau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMatkhau.Name = "txtMatkhau";
-            this.txtMatkhau.Size = new System.Drawing.Size(258, 22);
+            this.txtMatkhau.Size = new System.Drawing.Size(290, 26);
             this.txtMatkhau.TabIndex = 4;
             this.txtMatkhau.UseSystemPasswordChar = true;
             // 
@@ -62,9 +64,10 @@ namespace DangNhap
             this.btDangnhap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btDangnhap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btDangnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDangnhap.Location = new System.Drawing.Point(362, 499);
+            this.btDangnhap.Location = new System.Drawing.Point(407, 624);
+            this.btDangnhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btDangnhap.Name = "btDangnhap";
-            this.btDangnhap.Size = new System.Drawing.Size(127, 52);
+            this.btDangnhap.Size = new System.Drawing.Size(143, 65);
             this.btDangnhap.TabIndex = 8;
             this.btDangnhap.Text = "Đăng nhập";
             this.btDangnhap.UseVisualStyleBackColor = false;
@@ -73,9 +76,10 @@ namespace DangNhap
             // pictureBox3
             // 
             this.pictureBox3.Image = global::DangNhap.Properties.Resources.confirm_password;
-            this.pictureBox3.Location = new System.Drawing.Point(259, 378);
+            this.pictureBox3.Location = new System.Drawing.Point(291, 472);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(44, 36);
+            this.pictureBox3.Size = new System.Drawing.Size(50, 45);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
@@ -83,9 +87,10 @@ namespace DangNhap
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(259, 324);
+            this.pictureBox2.Location = new System.Drawing.Point(291, 405);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(44, 36);
+            this.pictureBox2.Size = new System.Drawing.Size(50, 45);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -93,9 +98,10 @@ namespace DangNhap
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(246, 31);
+            this.pictureBox1.Location = new System.Drawing.Point(277, 39);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(334, 240);
+            this.pictureBox1.Size = new System.Drawing.Size(376, 300);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -103,17 +109,18 @@ namespace DangNhap
             // Form1
             // 
             this.AcceptButton = this.btDangnhap;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 587);
+            this.ClientSize = new System.Drawing.Size(900, 734);
             this.Controls.Add(this.btDangnhap);
             this.Controls.Add(this.txtMatkhau);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.txtTentk);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "FrmDangNhap";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
