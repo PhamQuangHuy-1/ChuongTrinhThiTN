@@ -49,8 +49,8 @@ namespace DangNhap
 
                 string sql = "Select MaQND, MaND, MK from NguoiDung where MaND= '"+tk+"'and MK= '"+mk+"';";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                SqlDataReader dta= cmd.ExecuteReader(); 
-                if(dta.Read()==true)
+                SqlDataReader dta= cmd.ExecuteReader();
+                if (dta.Read()==true) 
                 {
                     string l = dta["MaQND"].ToString();
                     if (l == "112")
