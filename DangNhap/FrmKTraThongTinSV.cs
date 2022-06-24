@@ -13,7 +13,7 @@ namespace DangNhap
 {
     public partial class FrmKTraThongTinSV : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
         public string tk;
         public string mk;
         public FrmKTraThongTinSV()
@@ -50,7 +50,25 @@ namespace DangNhap
                 Child1.ShowDialog();
 
             }
+            conn.Close();
+        }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+
+            conn.Open();
+            string msv = label5.Text;
+            FormGiaoDienThi Child1 = new FormGiaoDienThi(label5.Text);
+            string sql = "select Ten from NguoiDung where MaND ='"+tk+"' and MK= '"+mk+"';";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader dta = cmd.ExecuteReader();
+
+            while (dta.Read())
+            {
+                Child1.ShowDialog();
+
+            }
         }
     }
 }
