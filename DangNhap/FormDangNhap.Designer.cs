@@ -48,6 +48,7 @@ namespace DangNhap
             this.txtTentk.Name = "txtTentk";
             this.txtTentk.Size = new System.Drawing.Size(290, 26);
             this.txtTentk.TabIndex = 2;
+            this.txtTentk.TextChanged += new System.EventHandler(this.txtTentk_TextChanged);
             // 
             // txtMatkhau
             // 
@@ -106,7 +107,7 @@ namespace DangNhap
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // FormDangNhap
             // 
             this.AcceptButton = this.btDangnhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -119,7 +120,7 @@ namespace DangNhap
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Form1";
+            this.Name = "FormDangNhap";
             this.Text = "FrmDangNhap";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

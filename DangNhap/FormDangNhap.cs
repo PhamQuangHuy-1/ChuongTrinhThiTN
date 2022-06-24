@@ -14,6 +14,8 @@ namespace DangNhap
 {
     public partial class FormDangNhap : Form
     {
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
+
         public FormDangNhap()
         {
             InitializeComponent();
@@ -37,14 +39,13 @@ namespace DangNhap
 
         private void btDangnhap_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
             try
             {
                 conn.Open();
                 string tk = txtTentk.Text;
                 string mk = txtMatkhau.Text;
                 Frmmain f = new Frmmain();
-                FrmSV d = new FrmSV();
+                FrmKTraThongTinSV d = new FrmKTraThongTinSV(txtTentk.Text, txtMatkhau.Text);
 
                 string sql = "Select MaQND, MaND, Password from NguoiDung where MaND= '"+tk+"'and Password= '"+mk+"';";
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -71,6 +72,11 @@ namespace DangNhap
                 MessageBox.Show("Lỗi kết nối");
             }
             this.Hide();
+        }
+
+        private void txtTentk_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }   
 }

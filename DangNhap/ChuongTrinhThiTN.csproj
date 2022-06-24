@@ -70,6 +70,9 @@
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGiaoDienThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frmmain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,16 +91,22 @@
     <Compile Include="FrmQLND.Designer.cs">
       <DependentUpon>FrmQLND.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSV.cs">
+    <Compile Include="FrmKTraThongTinSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSV.Designer.cs">
-      <DependentUpon>FrmSV.cs</DependentUpon>
+    <Compile Include="FrmKTraThongTinSV.Designer.cs">
+      <DependentUpon>FrmKTraThongTinSV.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGiaoDienThi.resx">
+      <DependentUpon>FormGiaoDienThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKTraThongTinSV.resx">
+      <DependentUpon>FrmKTraThongTinSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frmmain.resx">
       <DependentUpon>Frmmain.cs</DependentUpon>
