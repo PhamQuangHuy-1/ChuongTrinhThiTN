@@ -64,7 +64,7 @@ namespace DangNhap
                 }
                 else 
                 {
-                    MessageBox.Show("Đăng nhập thất bại");
+                    MessageBox.Show("Đăng nhập thất bại!");
                 }
             }
             catch(Exception)
