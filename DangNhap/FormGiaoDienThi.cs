@@ -1859,7 +1859,7 @@ namespace DangNhap
 
         private void label60_Click(object sender, EventArgs e)
         {
-            NoiDungCauHoi.Height=143;            
+            NoiDungCauHoi.Height=143;             
             NoiDungCauHoi.Width=982;
 
         }
