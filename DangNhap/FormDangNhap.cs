@@ -14,6 +14,11 @@ namespace DangNhap
 {
     public partial class FormDangNhap : Form
     {
+        //link database của Huy
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
+
+
+        //link database của Hoàng
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
 
         public FormDangNhap()
@@ -46,14 +51,13 @@ namespace DangNhap
                 string mk = txtMatkhau.Text;
                 Frmmain f = new Frmmain();
                 FrmKTraThongTinSV d = new FrmKTraThongTinSV(txtTentk.Text, txtMatkhau.Text);
-
-                string sql = "Select MaQND, MaND, MK from NguoiDung where MaND= '"+tk+"'and MK= '"+mk+"';";
+                string sql = "Select MaQND, MaND, Password from NguoiDung where MaND= '"+tk+"'and Password= '"+mk+"';";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataReader dta= cmd.ExecuteReader();
                 if (dta.Read()==true) 
                 {
                     string l = dta["MaQND"].ToString();
-                    if (l == "112")
+                    if (l == "1")
                     {
                         d.Show();
                     }

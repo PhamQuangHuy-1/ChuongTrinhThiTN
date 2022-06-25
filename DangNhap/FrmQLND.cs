@@ -12,8 +12,13 @@ using System.Data.SqlClient;
 namespace DangNhap
 {
     public partial class FrmQLND : Form
-    {
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
+    {   //link database của Huy
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
+
+
+        //link database của Hoàng
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+
         SqlCommand cmd;
         SqlDataAdapter da = new SqlDataAdapter();
         DataTable dt = new DataTable();

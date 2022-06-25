@@ -41,5 +41,10 @@ namespace DangNhap
             FrmQLND f = new FrmQLND();
             f.Show();
         }
+
+        private void Frmmain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
