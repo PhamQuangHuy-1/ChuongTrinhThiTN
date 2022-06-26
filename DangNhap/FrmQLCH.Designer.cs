@@ -32,7 +32,6 @@ namespace DangNhap
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grd1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.txtMamon = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtD = new System.Windows.Forms.TextBox();
@@ -50,6 +49,7 @@ namespace DangNhap
             this.txtCauhoi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMach = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.btThem = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
@@ -112,17 +112,6 @@ namespace DangNhap
             this.groupBox2.Size = new System.Drawing.Size(934, 272);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(533, 214);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 25);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "Mã môn ";
             // 
             // txtMamon
             // 
@@ -285,6 +274,16 @@ namespace DangNhap
             this.txtMach.Name = "txtMach";
             this.txtMach.Size = new System.Drawing.Size(180, 31);
             this.txtMach.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(533, 214);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 25);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Mã môn ";
             // 
             // btThem
             // 
