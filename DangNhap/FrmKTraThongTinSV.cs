@@ -63,7 +63,7 @@ namespace DangNhap
 
         private void FrmKTraThongTinSV_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
