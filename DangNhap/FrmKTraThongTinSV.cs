@@ -13,7 +13,7 @@ namespace DangNhap
 {
     public partial class FrmKTraThongTinSV : Form
     {   //link database của Huy
-        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
+       // SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
 
 
         //link database của Hoàng
@@ -59,6 +59,11 @@ namespace DangNhap
 
             }
             conn.Close();
+        }
+
+        private void FrmKTraThongTinSV_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
