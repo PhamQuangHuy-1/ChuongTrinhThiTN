@@ -13,10 +13,10 @@ namespace DangNhap
 {
     public partial class FrmQLCH : Form
     {   //link database của Huy 
-       // SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
 
         //link database của Hoàng
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
         
         SqlCommand cmd;
         SqlDataAdapter da = new SqlDataAdapter();
@@ -89,6 +89,7 @@ namespace DangNhap
 
         private void btXoa_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa bản ghi này?(Y/N)", "Xác nhận yêu cầu", MessageBoxButtons.YesNo) == DialogResult.Yes)
             cmd = conn.CreateCommand();
             cmd.CommandText = "delete  from CauHoi where MaCH = '"+txtMach.Text+"'";
             cmd.ExecuteNonQuery();
@@ -113,7 +114,13 @@ namespace DangNhap
             this.Close();
         }
 
-       
+        private void FrmQLCH_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("\t");
+            }
+        }
     }
 
 }
