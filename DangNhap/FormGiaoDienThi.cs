@@ -1765,7 +1765,7 @@ namespace DangNhap
             dt = new DataTable();
             dt.Clear();
             da.Fill(dt);
-            grdData1.DataSource= dt;
+            grdData1.DataSource= dt; 
             ShowCauHoi();
 
         }
