@@ -25,18 +25,7 @@ namespace DangNhap
         {
             InitializeComponent();
         }
-
-        private void llblQuenmk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            
-
-        }
-
-        private void llblDangky_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-           
-        }
-
+       
         private void Form1_Load(object sender, EventArgs e)
         {
 

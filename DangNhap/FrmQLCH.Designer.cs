@@ -197,6 +197,7 @@ namespace DangNhap
             this.txtA.Name = "txtA";
             this.txtA.Size = new System.Drawing.Size(180, 31);
             this.txtA.TabIndex = 22;
+           
             // 
             // label3
             // 

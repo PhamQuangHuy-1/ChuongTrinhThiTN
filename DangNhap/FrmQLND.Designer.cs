@@ -74,7 +74,7 @@ namespace DangNhap
             this.grd1.Size = new System.Drawing.Size(837, 272);
             this.grd1.TabIndex = 0;
             this.grd1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd1_CellClick);
-            this.grd1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd1_CellContentClick);
+           
             // 
             // groupBox2
             // 
