@@ -14,14 +14,16 @@ namespace DangNhap
     {
         SqlDataAdapter da = new SqlDataAdapter();
         DataTable dt = new DataTable();
+        SqlDataAdapter da1 = new SqlDataAdapter();
+        DataTable dt1 = new DataTable();
         SqlCommand cmd;
-        
+
 
         //link database của Huy
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
 
         //link database của Hoàng
-        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
         public string msv;
         int i;
         private Label label2;
@@ -151,6 +153,7 @@ namespace DangNhap
         private Label label13;
         private Label label14;
         private Label NoiDungCauHoi;
+        private DataGridView grdData2;
         private Label label1;
 
         public FormGiaoDienThi()
@@ -287,6 +290,7 @@ namespace DangNhap
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.NoiDungCauHoi = new System.Windows.Forms.Label();
+            this.grdData2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.grdData1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -299,6 +303,7 @@ namespace DangNhap
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdData2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -467,7 +472,6 @@ namespace DangNhap
             this.lbAnsA.Size = new System.Drawing.Size(142, 37);
             this.lbAnsA.TabIndex = 17;
             this.lbAnsA.Text = "answerA";
-
             // 
             // lbAnsB
             // 
@@ -507,7 +511,7 @@ namespace DangNhap
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(6, 3);
+            this.textBox1.Location = new System.Drawing.Point(3, 0);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(982, 130);
@@ -598,6 +602,7 @@ namespace DangNhap
             this.radioButton9.TabIndex = 32;
             this.radioButton9.TabStop = true;
             this.radioButton9.UseVisualStyleBackColor = true;
+            this.radioButton9.CheckedChanged += new System.EventHandler(this.radioButton9_CheckedChanged);
             // 
             // radioButton10
             // 
@@ -608,6 +613,7 @@ namespace DangNhap
             this.radioButton10.TabIndex = 29;
             this.radioButton10.TabStop = true;
             this.radioButton10.UseVisualStyleBackColor = true;
+            this.radioButton10.CheckedChanged += new System.EventHandler(this.radioButton10_CheckedChanged);
             // 
             // radioButton11
             // 
@@ -618,6 +624,7 @@ namespace DangNhap
             this.radioButton11.TabIndex = 31;
             this.radioButton11.TabStop = true;
             this.radioButton11.UseVisualStyleBackColor = true;
+            this.radioButton11.CheckedChanged += new System.EventHandler(this.radioButton11_CheckedChanged);
             // 
             // radioButton12
             // 
@@ -628,6 +635,7 @@ namespace DangNhap
             this.radioButton12.TabIndex = 30;
             this.radioButton12.TabStop = true;
             this.radioButton12.UseVisualStyleBackColor = true;
+            this.radioButton12.CheckedChanged += new System.EventHandler(this.radioButton12_CheckedChanged);
             // 
             // label21
             // 
@@ -707,6 +715,7 @@ namespace DangNhap
             this.radioButton13.TabIndex = 32;
             this.radioButton13.TabStop = true;
             this.radioButton13.UseVisualStyleBackColor = true;
+            this.radioButton13.CheckedChanged += new System.EventHandler(this.radioButton13_CheckedChanged);
             // 
             // radioButton14
             // 
@@ -717,6 +726,7 @@ namespace DangNhap
             this.radioButton14.TabIndex = 29;
             this.radioButton14.TabStop = true;
             this.radioButton14.UseVisualStyleBackColor = true;
+            this.radioButton14.CheckedChanged += new System.EventHandler(this.radioButton14_CheckedChanged);
             // 
             // radioButton15
             // 
@@ -727,6 +737,7 @@ namespace DangNhap
             this.radioButton15.TabIndex = 31;
             this.radioButton15.TabStop = true;
             this.radioButton15.UseVisualStyleBackColor = true;
+            this.radioButton15.CheckedChanged += new System.EventHandler(this.radioButton15_CheckedChanged);
             // 
             // radioButton16
             // 
@@ -737,6 +748,7 @@ namespace DangNhap
             this.radioButton16.TabIndex = 30;
             this.radioButton16.TabStop = true;
             this.radioButton16.UseVisualStyleBackColor = true;
+            this.radioButton16.CheckedChanged += new System.EventHandler(this.radioButton16_CheckedChanged);
             // 
             // label26
             // 
@@ -816,6 +828,7 @@ namespace DangNhap
             this.radioButton8.TabIndex = 32;
             this.radioButton8.TabStop = true;
             this.radioButton8.UseVisualStyleBackColor = true;
+            this.radioButton8.CheckedChanged += new System.EventHandler(this.radioButton8_CheckedChanged);
             // 
             // radioButton5
             // 
@@ -826,6 +839,7 @@ namespace DangNhap
             this.radioButton5.TabIndex = 29;
             this.radioButton5.TabStop = true;
             this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
             // 
             // radioButton7
             // 
@@ -836,6 +850,7 @@ namespace DangNhap
             this.radioButton7.TabIndex = 31;
             this.radioButton7.TabStop = true;
             this.radioButton7.UseVisualStyleBackColor = true;
+            this.radioButton7.CheckedChanged += new System.EventHandler(this.radioButton7_CheckedChanged);
             // 
             // radioButton6
             // 
@@ -846,6 +861,7 @@ namespace DangNhap
             this.radioButton6.TabIndex = 30;
             this.radioButton6.TabStop = true;
             this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
             // 
             // label16
             // 
@@ -925,6 +941,7 @@ namespace DangNhap
             this.radioButton17.TabIndex = 32;
             this.radioButton17.TabStop = true;
             this.radioButton17.UseVisualStyleBackColor = true;
+            this.radioButton17.CheckedChanged += new System.EventHandler(this.radioButton17_CheckedChanged);
             // 
             // radioButton18
             // 
@@ -935,6 +952,7 @@ namespace DangNhap
             this.radioButton18.TabIndex = 29;
             this.radioButton18.TabStop = true;
             this.radioButton18.UseVisualStyleBackColor = true;
+            this.radioButton18.CheckedChanged += new System.EventHandler(this.radioButton18_CheckedChanged);
             // 
             // radioButton19
             // 
@@ -945,6 +963,7 @@ namespace DangNhap
             this.radioButton19.TabIndex = 31;
             this.radioButton19.TabStop = true;
             this.radioButton19.UseVisualStyleBackColor = true;
+            this.radioButton19.CheckedChanged += new System.EventHandler(this.radioButton19_CheckedChanged);
             // 
             // radioButton20
             // 
@@ -955,6 +974,7 @@ namespace DangNhap
             this.radioButton20.TabIndex = 30;
             this.radioButton20.TabStop = true;
             this.radioButton20.UseVisualStyleBackColor = true;
+            this.radioButton20.CheckedChanged += new System.EventHandler(this.radioButton20_CheckedChanged);
             // 
             // label31
             // 
@@ -1052,6 +1072,7 @@ namespace DangNhap
             this.radioButton37.TabIndex = 32;
             this.radioButton37.TabStop = true;
             this.radioButton37.UseVisualStyleBackColor = true;
+            this.radioButton37.CheckedChanged += new System.EventHandler(this.radioButton37_CheckedChanged);
             // 
             // radioButton38
             // 
@@ -1062,6 +1083,7 @@ namespace DangNhap
             this.radioButton38.TabIndex = 29;
             this.radioButton38.TabStop = true;
             this.radioButton38.UseVisualStyleBackColor = true;
+            this.radioButton38.CheckedChanged += new System.EventHandler(this.radioButton38_CheckedChanged);
             // 
             // radioButton39
             // 
@@ -1072,6 +1094,7 @@ namespace DangNhap
             this.radioButton39.TabIndex = 31;
             this.radioButton39.TabStop = true;
             this.radioButton39.UseVisualStyleBackColor = true;
+            this.radioButton39.CheckedChanged += new System.EventHandler(this.radioButton39_CheckedChanged);
             // 
             // radioButton40
             // 
@@ -1082,6 +1105,7 @@ namespace DangNhap
             this.radioButton40.TabIndex = 30;
             this.radioButton40.TabStop = true;
             this.radioButton40.UseVisualStyleBackColor = true;
+            this.radioButton40.CheckedChanged += new System.EventHandler(this.radioButton40_CheckedChanged);
             // 
             // label56
             // 
@@ -1161,6 +1185,7 @@ namespace DangNhap
             this.radioButton33.TabIndex = 32;
             this.radioButton33.TabStop = true;
             this.radioButton33.UseVisualStyleBackColor = true;
+            this.radioButton33.CheckedChanged += new System.EventHandler(this.radioButton33_CheckedChanged);
             // 
             // radioButton34
             // 
@@ -1171,6 +1196,7 @@ namespace DangNhap
             this.radioButton34.TabIndex = 29;
             this.radioButton34.TabStop = true;
             this.radioButton34.UseVisualStyleBackColor = true;
+            this.radioButton34.CheckedChanged += new System.EventHandler(this.radioButton34_CheckedChanged);
             // 
             // radioButton35
             // 
@@ -1181,6 +1207,7 @@ namespace DangNhap
             this.radioButton35.TabIndex = 31;
             this.radioButton35.TabStop = true;
             this.radioButton35.UseVisualStyleBackColor = true;
+            this.radioButton35.CheckedChanged += new System.EventHandler(this.radioButton35_CheckedChanged);
             // 
             // radioButton36
             // 
@@ -1191,6 +1218,7 @@ namespace DangNhap
             this.radioButton36.TabIndex = 30;
             this.radioButton36.TabStop = true;
             this.radioButton36.UseVisualStyleBackColor = true;
+            this.radioButton36.CheckedChanged += new System.EventHandler(this.radioButton36_CheckedChanged);
             // 
             // label51
             // 
@@ -1270,6 +1298,7 @@ namespace DangNhap
             this.radioButton29.TabIndex = 32;
             this.radioButton29.TabStop = true;
             this.radioButton29.UseVisualStyleBackColor = true;
+            this.radioButton29.CheckedChanged += new System.EventHandler(this.radioButton29_CheckedChanged);
             // 
             // radioButton30
             // 
@@ -1280,6 +1309,7 @@ namespace DangNhap
             this.radioButton30.TabIndex = 29;
             this.radioButton30.TabStop = true;
             this.radioButton30.UseVisualStyleBackColor = true;
+            this.radioButton30.CheckedChanged += new System.EventHandler(this.radioButton30_CheckedChanged);
             // 
             // radioButton31
             // 
@@ -1290,6 +1320,7 @@ namespace DangNhap
             this.radioButton31.TabIndex = 31;
             this.radioButton31.TabStop = true;
             this.radioButton31.UseVisualStyleBackColor = true;
+            this.radioButton31.CheckedChanged += new System.EventHandler(this.radioButton31_CheckedChanged);
             // 
             // radioButton32
             // 
@@ -1300,6 +1331,7 @@ namespace DangNhap
             this.radioButton32.TabIndex = 30;
             this.radioButton32.TabStop = true;
             this.radioButton32.UseVisualStyleBackColor = true;
+            this.radioButton32.CheckedChanged += new System.EventHandler(this.radioButton32_CheckedChanged);
             // 
             // label46
             // 
@@ -1379,6 +1411,7 @@ namespace DangNhap
             this.radioButton21.TabIndex = 32;
             this.radioButton21.TabStop = true;
             this.radioButton21.UseVisualStyleBackColor = true;
+            this.radioButton21.CheckedChanged += new System.EventHandler(this.radioButton21_CheckedChanged);
             // 
             // radioButton22
             // 
@@ -1389,6 +1422,7 @@ namespace DangNhap
             this.radioButton22.TabIndex = 29;
             this.radioButton22.TabStop = true;
             this.radioButton22.UseVisualStyleBackColor = true;
+            this.radioButton22.CheckedChanged += new System.EventHandler(this.radioButton22_CheckedChanged);
             // 
             // radioButton23
             // 
@@ -1399,6 +1433,7 @@ namespace DangNhap
             this.radioButton23.TabIndex = 31;
             this.radioButton23.TabStop = true;
             this.radioButton23.UseVisualStyleBackColor = true;
+            this.radioButton23.CheckedChanged += new System.EventHandler(this.radioButton23_CheckedChanged);
             // 
             // radioButton24
             // 
@@ -1409,6 +1444,7 @@ namespace DangNhap
             this.radioButton24.TabIndex = 30;
             this.radioButton24.TabStop = true;
             this.radioButton24.UseVisualStyleBackColor = true;
+            this.radioButton24.CheckedChanged += new System.EventHandler(this.radioButton24_CheckedChanged);
             // 
             // label36
             // 
@@ -1488,6 +1524,7 @@ namespace DangNhap
             this.radioButton25.TabIndex = 32;
             this.radioButton25.TabStop = true;
             this.radioButton25.UseVisualStyleBackColor = true;
+            this.radioButton25.CheckedChanged += new System.EventHandler(this.radioButton25_CheckedChanged);
             // 
             // radioButton26
             // 
@@ -1498,6 +1535,7 @@ namespace DangNhap
             this.radioButton26.TabIndex = 29;
             this.radioButton26.TabStop = true;
             this.radioButton26.UseVisualStyleBackColor = true;
+            this.radioButton26.CheckedChanged += new System.EventHandler(this.radioButton26_CheckedChanged);
             // 
             // radioButton27
             // 
@@ -1508,6 +1546,7 @@ namespace DangNhap
             this.radioButton27.TabIndex = 31;
             this.radioButton27.TabStop = true;
             this.radioButton27.UseVisualStyleBackColor = true;
+            this.radioButton27.CheckedChanged += new System.EventHandler(this.radioButton27_CheckedChanged);
             // 
             // radioButton28
             // 
@@ -1518,6 +1557,7 @@ namespace DangNhap
             this.radioButton28.TabIndex = 30;
             this.radioButton28.TabStop = true;
             this.radioButton28.UseVisualStyleBackColor = true;
+            this.radioButton28.CheckedChanged += new System.EventHandler(this.radioButton28_CheckedChanged);
             // 
             // label41
             // 
@@ -1597,6 +1637,7 @@ namespace DangNhap
             this.radioButton1.TabIndex = 32;
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -1607,6 +1648,7 @@ namespace DangNhap
             this.radioButton2.TabIndex = 29;
             this.radioButton2.TabStop = true;
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton3
             // 
@@ -1617,6 +1659,7 @@ namespace DangNhap
             this.radioButton3.TabIndex = 31;
             this.radioButton3.TabStop = true;
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButton4
             // 
@@ -1627,6 +1670,7 @@ namespace DangNhap
             this.radioButton4.TabIndex = 30;
             this.radioButton4.TabStop = true;
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // label10
             // 
@@ -1679,9 +1723,20 @@ namespace DangNhap
             this.NoiDungCauHoi.Text = "cauhoi";
             this.NoiDungCauHoi.Click += new System.EventHandler(this.label60_Click);
             // 
+            // grdData2
+            // 
+            this.grdData2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdData2.Location = new System.Drawing.Point(643, 392);
+            this.grdData2.Name = "grdData2";
+            this.grdData2.RowHeadersWidth = 62;
+            this.grdData2.RowTemplate.Height = 28;
+            this.grdData2.Size = new System.Drawing.Size(122, 82);
+            this.grdData2.TabIndex = 45;
+            // 
             // FormGiaoDienThi
             // 
             this.ClientSize = new System.Drawing.Size(1285, 693);
+            this.Controls.Add(this.grdData2);
             this.Controls.Add(this.NoiDungCauHoi);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btNext);
@@ -1733,13 +1788,14 @@ namespace DangNhap
             this.panel8.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdData2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
 
-        public FormGiaoDienThi(string Message):this()
+        public FormGiaoDienThi(string Message) : this()
         {
             conn.Open();
 
@@ -1765,7 +1821,7 @@ namespace DangNhap
             dt = new DataTable();
             dt.Clear();
             da.Fill(dt);
-            grdData1.DataSource= dt; 
+            grdData1.DataSource= dt;
             ShowCauHoi();
 
         }
@@ -1774,7 +1830,7 @@ namespace DangNhap
             i = grdData1.CurrentRow.Index;
             NoiDungCauHoi.Text="  Câu " +(i+1).ToString() + ": " +grdData1.Rows[i].Cells["CauHoi"].Value.ToString();
             lbAnsA.Text=grdData1.Rows[i].Cells["OptionA"].Value.ToString();
-            lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();          
+            lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();
             if (grdData1.Rows[i].Cells["OptionC"].Value.ToString()=="")
             {
                 lbAnsC.Visible=false;
@@ -1798,9 +1854,9 @@ namespace DangNhap
                 lbD.Visible=true;
                 lbAnsD.Text=grdData1.Rows[i].Cells["OptionD"].Value.ToString();
             }
-            chonDapAn();
+
         }
-        
+
         int sec1 = 60;
         int min1 = 4;
         private void timer1_Tick(object sender, EventArgs e)
@@ -1837,7 +1893,7 @@ namespace DangNhap
             ShowCauHoi();
         }
 
-       public void btNext_Click(object sender, EventArgs e)
+        public void btNext_Click(object sender, EventArgs e)
         {
             i = grdData1.CurrentRow.Index;
             if (i==grdData1.RowCount-2)
@@ -1853,23 +1909,34 @@ namespace DangNhap
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Có muốn kết thúc bài thi hay không?", "Thông báo", MessageBoxButtons.YesNo) ==DialogResult.Yes)
-                KetThucThi();
+            if (MessageBox.Show("Bạn có muốn kết thúc bài thi hay không?", "Thông báo", MessageBoxButtons.YesNo) ==DialogResult.Yes)
+                ShowDiem();
         }
-        private void KetThucThi()
+        private void ShowDiem()
         {
-            Application.Exit();
+            conn.Close();
+            conn.Open();
+            string diem = "select count(TraLoi) as 'So Diem' from BaiLam,CauHoi where BaiLam.MaCH= CauHoi.MaCH and BaiLam.TraLoi=CauHoi.DapAn and 'So Diem' is not null ";
+            da1 = new SqlDataAdapter(diem, conn);
+            dt1 = new DataTable();
+            dt1.Clear();
+            da1.Fill(dt1);
+            grdData1.DataSource= dt1;
+            if (MessageBox.Show("Điểm của bạn là: "+ grdData1.Rows[0].Cells["So Diem"].Value.ToString(), "Thông báo", MessageBoxButtons.YesNo) ==DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
-      
+
         private void label60_Click(object sender, EventArgs e)
         {
-            NoiDungCauHoi.Height=143;             
+            NoiDungCauHoi.Height=143;
             NoiDungCauHoi.Width=982;
 
         }
 
         private void panel1_Click(object sender, EventArgs e)
-        {           
+        {
             i = 0;
             NoiDungCauHoi.Text="  Câu " +(i+1).ToString() + ": " +grdData1.Rows[i].Cells["CauHoi"].Value.ToString();
             lbAnsA.Text=grdData1.Rows[i].Cells["OptionA"].Value.ToString();
@@ -2188,32 +2255,426 @@ namespace DangNhap
                 lbAnsD.Text=grdData1.Rows[i].Cells["OptionD"].Value.ToString();
             }
         }
-        
-        private void chonDapAn()
+
+        //câu 1:
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
         {
-            cmd = conn.CreateCommand();
             if (radioButton6.Checked==true)
             {
-                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[0].Cells["MaCH"].Value.ToString() + "' ";
-                cmd.ExecuteNonQuery();
-            }
-            else if (radioButton7.Checked==true)
-            {
-                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[0].Cells["MaCH"].Value.ToString() + "' ";
-                cmd.ExecuteNonQuery();
-            }
-            else if (radioButton8.Checked==true)
-            {
-                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[0].Cells["MaCH"].Value.ToString() + "' ";
-                cmd.ExecuteNonQuery();
-            }
-            else 
-            {
-                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[0].Cells["MaCH"].Value.ToString() + "' ";
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[0].Cells["MaCH"].Value.ToString() + "' and MaND ='"+msv+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
 
-       
+        private void radioButton7_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton7.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[0].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton8_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton8.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[0].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton5.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[0].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+
+        //câu 2:
+        private void radioButton12_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton12.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[1].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton11_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton11.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[1].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton9_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton9.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[1].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton10_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton10.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[1].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+        //câu 3: 
+        private void radioButton16_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (radioButton16.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[2].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton15_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (radioButton15.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[2].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton13_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton13.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[2].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton14_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton14.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[2].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+        //câu 4
+        private void radioButton20_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton20.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[3].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton19_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton19.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[3].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton17_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton17.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[3].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton18_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton18.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[3].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+        //câu 5:
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton4.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[4].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton19.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[4].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[4].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[4].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+        //câu 6:
+        private void radioButton24_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton24.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[5].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton23_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton23.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[5].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton21_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton21.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[5].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton22_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton22.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[5].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+        //câu 7:
+        private void radioButton28_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton28.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[6].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton27_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton27.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[6].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton25_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton25.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[6].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton26_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton26.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[6].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+        //câu 8:
+        private void radioButton32_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton32.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[7].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton31_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton31.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[7].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton29_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton29.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[7].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton30_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton30.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[7].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        //Câu 9:
+        private void radioButton36_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton36.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[8].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton35_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton35.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[8].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton33_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton33.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[8].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton34_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton34.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[8].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
+        //câu 10:
+        private void radioButton40_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton40.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[9].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton39_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton39.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[9].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton37_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton37.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[9].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void radioButton38_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton38.Checked==true)
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[9].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }
