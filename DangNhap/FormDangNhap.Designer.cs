@@ -33,9 +33,13 @@ namespace DangNhap
             this.txtTentk = new System.Windows.Forms.TextBox();
             this.txtMatkhau = new System.Windows.Forms.TextBox();
             this.btDangnhap = new System.Windows.Forms.Button();
+            this.picHide = new System.Windows.Forms.PictureBox();
+            this.picOpen = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picHide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOpen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -43,21 +47,19 @@ namespace DangNhap
             // 
             // txtTentk
             // 
-            this.txtTentk.Location = new System.Drawing.Point(362, 422);
-            this.txtTentk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTentk.Location = new System.Drawing.Point(322, 338);
             this.txtTentk.Name = "txtTentk";
-            this.txtTentk.Size = new System.Drawing.Size(290, 26);
+            this.txtTentk.Size = new System.Drawing.Size(258, 22);
             this.txtTentk.TabIndex = 2;
             this.txtTentk.TextChanged += new System.EventHandler(this.txtTentk_TextChanged);
             // 
             // txtMatkhau
             // 
-            this.txtMatkhau.Location = new System.Drawing.Point(362, 490);
-            this.txtMatkhau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMatkhau.Location = new System.Drawing.Point(322, 392);
             this.txtMatkhau.Name = "txtMatkhau";
-            this.txtMatkhau.Size = new System.Drawing.Size(290, 26);
+            this.txtMatkhau.PasswordChar = '*';
+            this.txtMatkhau.Size = new System.Drawing.Size(258, 22);
             this.txtMatkhau.TabIndex = 4;
-            this.txtMatkhau.UseSystemPasswordChar = true;
             // 
             // btDangnhap
             // 
@@ -65,22 +67,42 @@ namespace DangNhap
             this.btDangnhap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btDangnhap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btDangnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDangnhap.Location = new System.Drawing.Point(407, 624);
-            this.btDangnhap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btDangnhap.Location = new System.Drawing.Point(362, 499);
             this.btDangnhap.Name = "btDangnhap";
-            this.btDangnhap.Size = new System.Drawing.Size(143, 65);
+            this.btDangnhap.Size = new System.Drawing.Size(127, 52);
             this.btDangnhap.TabIndex = 8;
             this.btDangnhap.Text = "Đăng nhập";
             this.btDangnhap.UseVisualStyleBackColor = false;
             this.btDangnhap.Click += new System.EventHandler(this.btDangnhap_Click);
             // 
+            // picHide
+            // 
+            this.picHide.Image = global::DangNhap.Properties.Resources.visibility__1_;
+            this.picHide.Location = new System.Drawing.Point(552, 392);
+            this.picHide.Name = "picHide";
+            this.picHide.Size = new System.Drawing.Size(28, 22);
+            this.picHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picHide.TabIndex = 10;
+            this.picHide.TabStop = false;
+            this.picHide.Click += new System.EventHandler(this.picHide_Click);
+            // 
+            // picOpen
+            // 
+            this.picOpen.Image = global::DangNhap.Properties.Resources.visibility;
+            this.picOpen.Location = new System.Drawing.Point(552, 392);
+            this.picOpen.Name = "picOpen";
+            this.picOpen.Size = new System.Drawing.Size(28, 22);
+            this.picOpen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picOpen.TabIndex = 9;
+            this.picOpen.TabStop = false;
+            this.picOpen.Click += new System.EventHandler(this.picOpen_Click);
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::DangNhap.Properties.Resources.confirm_password;
-            this.pictureBox3.Location = new System.Drawing.Point(291, 472);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(259, 378);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 45);
+            this.pictureBox3.Size = new System.Drawing.Size(44, 36);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
@@ -88,10 +110,9 @@ namespace DangNhap
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(291, 405);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(259, 324);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 45);
+            this.pictureBox2.Size = new System.Drawing.Size(44, 36);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -99,10 +120,9 @@ namespace DangNhap
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(277, 39);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(246, 31);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(376, 300);
+            this.pictureBox1.Size = new System.Drawing.Size(334, 240);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -110,20 +130,23 @@ namespace DangNhap
             // FormDangNhap
             // 
             this.AcceptButton = this.btDangnhap;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 734);
+            this.ClientSize = new System.Drawing.Size(800, 587);
+            this.Controls.Add(this.picHide);
+            this.Controls.Add(this.picOpen);
             this.Controls.Add(this.btDangnhap);
             this.Controls.Add(this.txtMatkhau);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.txtTentk);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDangNhap";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picHide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOpen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -140,6 +163,8 @@ namespace DangNhap
         private System.Windows.Forms.TextBox txtMatkhau;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btDangnhap;
+        private System.Windows.Forms.PictureBox picOpen;
+        private System.Windows.Forms.PictureBox picHide;
     }
 }
 

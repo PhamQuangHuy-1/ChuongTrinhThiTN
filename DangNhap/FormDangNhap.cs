@@ -71,5 +71,24 @@ namespace DangNhap
         {
 
         }
+
+        private void picHide_Click(object sender, EventArgs e)
+        {
+            if(txtMatkhau.PasswordChar=='*')
+            {
+                picOpen.BringToFront();
+                txtMatkhau.PasswordChar = '\0';
+            }
+        }
+
+        private void picOpen_Click(object sender, EventArgs e)
+        {
+
+            if (txtMatkhau.PasswordChar == '\0')
+            {
+                picHide.BringToFront();
+                txtMatkhau.PasswordChar = '*';
+            }
+        }
     }   
 }
