@@ -52,7 +52,7 @@ namespace DangNhap
                     }
                     else  
                     {
-                        f.Show ();
+                        f.Show();
                     }
                 }
                 else 

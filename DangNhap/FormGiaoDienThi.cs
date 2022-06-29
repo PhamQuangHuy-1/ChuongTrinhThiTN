@@ -14,8 +14,7 @@ namespace DangNhap
     {
         SqlDataAdapter da = new SqlDataAdapter();
         DataTable dt = new DataTable();
-        SqlDataAdapter da1 = new SqlDataAdapter();
-        DataTable dt1 = new DataTable();
+       
         SqlCommand cmd;
 
 
@@ -377,7 +376,7 @@ namespace DangNhap
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(713, 9);
+            this.label7.Location = new System.Drawing.Point(695, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 46);
             this.label7.TabIndex = 6;
@@ -511,7 +510,7 @@ namespace DangNhap
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(3, 0);
+            this.textBox1.Location = new System.Drawing.Point(1, 3);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(982, 130);
@@ -520,13 +519,14 @@ namespace DangNhap
             // grdData1
             // 
             this.grdData1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdData1.Location = new System.Drawing.Point(264, 9);
+            this.grdData1.Location = new System.Drawing.Point(299, 229);
             this.grdData1.Name = "grdData1";
             this.grdData1.ReadOnly = true;
             this.grdData1.RowHeadersWidth = 62;
             this.grdData1.RowTemplate.Height = 28;
-            this.grdData1.Size = new System.Drawing.Size(288, 112);
+            this.grdData1.Size = new System.Drawing.Size(583, 112);
             this.grdData1.TabIndex = 22;
+            this.grdData1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdData1_CellContentClick);
             // 
             // btPre
             // 
@@ -1726,7 +1726,7 @@ namespace DangNhap
             // grdData2
             // 
             this.grdData2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdData2.Location = new System.Drawing.Point(643, 392);
+            this.grdData2.Location = new System.Drawing.Point(807, 12);
             this.grdData2.Name = "grdData2";
             this.grdData2.RowHeadersWidth = 62;
             this.grdData2.RowTemplate.Height = 28;
@@ -1736,7 +1736,6 @@ namespace DangNhap
             // FormGiaoDienThi
             // 
             this.ClientSize = new System.Drawing.Size(1285, 693);
-            this.Controls.Add(this.grdData2);
             this.Controls.Add(this.NoiDungCauHoi);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btNext);
@@ -1763,6 +1762,7 @@ namespace DangNhap
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.grdData1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.grdData2);
             this.Name = "FormGiaoDienThi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormGiaoDienThi_Load);
@@ -1800,8 +1800,8 @@ namespace DangNhap
             conn.Open();
 
             msv = Message;
+                     
             string sql = "select Ten,MaND,NgaySinh from NguoiDung where  MaND ='"+msv+"';";
-
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataReader dta = cmd.ExecuteReader();
             if (dta.Read()==true)
@@ -1907,25 +1907,41 @@ namespace DangNhap
             ShowCauHoi();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn kết thúc bài thi hay không?", "Thông báo", MessageBoxButtons.YesNo) ==DialogResult.Yes)
-                ShowDiem();
+            FrmShowDiem dd = new FrmShowDiem(msv);
+
+            if (MessageBox.Show("Bạn có muốn nộp bài thi hay không?", "Thông báo", MessageBoxButtons.YesNo) ==DialogResult.Yes)
+            {
+                timer1.Stop();
+                CapNhatDiem();
+                //ShowDiem();                
+            }
+            dd.ShowDialog();
         }
-        private void ShowDiem()
+        //private void ShowDiem()
+        //{
+        //    conn.Close();
+        //    conn.Open();
+        //    string diem = "select count(TraLoi) as 'So Diem' from BaiLam,CauHoi where BaiLam.MaCH= CauHoi.MaCH and BaiLam.TraLoi=CauHoi.DapAn and 'So Diem' is not null and MaND ='"+msv+"'; ";
+        //    da1 = new SqlDataAdapter(diem, conn);
+        //    dt1 = new DataTable();
+        //    dt1.Clear();
+        //    da1.Fill(dt1);
+        //    grdData1.DataSource= dt1;
+        //    if (MessageBox.Show("Điểm của bạn là: "+ grdData1.Rows[0].Cells["So Diem"].Value.ToString(), "Thông báo", MessageBoxButtons.OK) ==DialogResult.OK)
+        //    {
+        //        Application.Exit();
+        //    }
+        //}
+        private void CapNhatDiem()
         {
             conn.Close();
             conn.Open();
-            string diem = "select count(TraLoi) as 'So Diem' from BaiLam,CauHoi where BaiLam.MaCH= CauHoi.MaCH and BaiLam.TraLoi=CauHoi.DapAn and 'So Diem' is not null ";
-            da1 = new SqlDataAdapter(diem, conn);
-            dt1 = new DataTable();
-            dt1.Clear();
-            da1.Fill(dt1);
-            grdData1.DataSource= dt1;
-            if (MessageBox.Show("Điểm của bạn là: "+ grdData1.Rows[0].Cells["So Diem"].Value.ToString(), "Thông báo", MessageBoxButtons.YesNo) ==DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            string updatediem = "update KetQua set SoDiem= (select count(TraLoi) as 'SoDiem' from BaiLam, CauHoi  where BaiLam.MaCH= CauHoi.MaCH and BaiLam.TraLoi=CauHoi.DapAn and MaND = '"+msv+"' and TraLoi is not null) where MaND = '"+msv+"' ";            
+            cmd = conn.CreateCommand();
+            cmd.CommandText= updatediem;
+            cmd.ExecuteNonQuery();
         }
 
         private void label60_Click(object sender, EventArgs e)
@@ -1940,8 +1956,7 @@ namespace DangNhap
             i = 0;
             NoiDungCauHoi.Text="  Câu " +(i+1).ToString() + ": " +grdData1.Rows[i].Cells["CauHoi"].Value.ToString();
             lbAnsA.Text=grdData1.Rows[i].Cells["OptionA"].Value.ToString();
-            lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();
-            //conn.Open();
+            lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();           
             if (grdData1.Rows[i].Cells["OptionC"].Value.ToString()=="")
             {
                 lbAnsC.Visible=false;
@@ -1973,8 +1988,7 @@ namespace DangNhap
             i = 1;
             NoiDungCauHoi.Text="  Câu " +(i+1).ToString() + ": " +grdData1.Rows[i].Cells["CauHoi"].Value.ToString();
             lbAnsA.Text=grdData1.Rows[i].Cells["OptionA"].Value.ToString();
-            lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();
-            //conn.Open();
+            lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();           
             if (grdData1.Rows[i].Cells["OptionC"].Value.ToString()=="")
             {
                 lbAnsC.Visible=false;
@@ -2005,8 +2019,7 @@ namespace DangNhap
             i = 2;
             NoiDungCauHoi.Text="  Câu " +(i+1).ToString() + ": " +grdData1.Rows[i].Cells["CauHoi"].Value.ToString();
             lbAnsA.Text=grdData1.Rows[i].Cells["OptionA"].Value.ToString();
-            lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();
-            //conn.Open();
+            lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();            
             if (grdData1.Rows[i].Cells["OptionC"].Value.ToString()=="")
             {
                 lbAnsC.Visible=false;
@@ -2037,8 +2050,7 @@ namespace DangNhap
             i = 3;
             NoiDungCauHoi.Text="  Câu " +(i+1).ToString() + ": " +grdData1.Rows[i].Cells["CauHoi"].Value.ToString();
             lbAnsA.Text=grdData1.Rows[i].Cells["OptionA"].Value.ToString();
-            lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();
-            //conn.Open();
+            lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();            
             if (grdData1.Rows[i].Cells["OptionC"].Value.ToString()=="")
             {
                 lbAnsC.Visible=false;
@@ -2069,8 +2081,7 @@ namespace DangNhap
             i = 4;
             NoiDungCauHoi.Text="  Câu " +(i+1).ToString() + ": " +grdData1.Rows[i].Cells["CauHoi"].Value.ToString();
             lbAnsA.Text=grdData1.Rows[i].Cells["OptionA"].Value.ToString();
-            lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();
-            //conn.Open();
+            lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();          
             if (grdData1.Rows[i].Cells["OptionC"].Value.ToString()=="")
             {
                 lbAnsC.Visible=false;
@@ -2102,7 +2113,6 @@ namespace DangNhap
             NoiDungCauHoi.Text="  Câu " +(i+1).ToString() + ": " +grdData1.Rows[i].Cells["CauHoi"].Value.ToString();
             lbAnsA.Text=grdData1.Rows[i].Cells["OptionA"].Value.ToString();
             lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();
-            //conn.Open();
             if (grdData1.Rows[i].Cells["OptionC"].Value.ToString()=="")
             {
                 lbAnsC.Visible=false;
@@ -2134,7 +2144,6 @@ namespace DangNhap
             NoiDungCauHoi.Text="  Câu " +(i+1).ToString() + ": " +grdData1.Rows[i].Cells["CauHoi"].Value.ToString();
             lbAnsA.Text=grdData1.Rows[i].Cells["OptionA"].Value.ToString();
             lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();
-            //conn.Open();
             if (grdData1.Rows[i].Cells["OptionC"].Value.ToString()=="")
             {
                 lbAnsC.Visible=false;
@@ -2166,7 +2175,6 @@ namespace DangNhap
             NoiDungCauHoi.Text="  Câu " +(i+1).ToString() + ": " +grdData1.Rows[i].Cells["CauHoi"].Value.ToString();
             lbAnsA.Text=grdData1.Rows[i].Cells["OptionA"].Value.ToString();
             lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();
-            //conn.Open();
             if (grdData1.Rows[i].Cells["OptionC"].Value.ToString()=="")
             {
                 lbAnsC.Visible=false;
@@ -2198,7 +2206,6 @@ namespace DangNhap
             NoiDungCauHoi.Text="  Câu " +(i+1).ToString() + ": " +grdData1.Rows[i].Cells["CauHoi"].Value.ToString();
             lbAnsA.Text=grdData1.Rows[i].Cells["OptionA"].Value.ToString();
             lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();
-            //conn.Open();
             if (grdData1.Rows[i].Cells["OptionC"].Value.ToString()=="")
             {
                 lbAnsC.Visible=false;
@@ -2230,7 +2237,6 @@ namespace DangNhap
             NoiDungCauHoi.Text="  Câu " +(i+1).ToString() + ": " +grdData1.Rows[i].Cells["CauHoi"].Value.ToString();
             lbAnsA.Text=grdData1.Rows[i].Cells["OptionA"].Value.ToString();
             lbAnsB.Text=grdData1.Rows[i].Cells["OptionB"].Value.ToString();
-            //conn.Open();
             if (grdData1.Rows[i].Cells["OptionC"].Value.ToString()=="")
             {
                 lbAnsC.Visible=false;
@@ -2675,6 +2681,11 @@ namespace DangNhap
                 cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[9].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        private void grdData1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

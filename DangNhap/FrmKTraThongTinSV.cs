@@ -41,7 +41,7 @@ namespace DangNhap
                 label6.Text=dta["NgaySinh"].ToString();
             }
         }
-      
+
 
         private void button1_Click_1(object sender, EventArgs e)
         {
