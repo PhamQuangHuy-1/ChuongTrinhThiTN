@@ -17,7 +17,7 @@ namespace DangNhap
 
 
         //link database của Hoàng
-        SqlConnection conn = new SqlConnection(@"Data Source=CUYEN\CUYEN;Initial Catalog=Exam;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
 
         public string tk;
         public string mk;

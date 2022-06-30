@@ -39,9 +39,9 @@ namespace DangNhap
             this.quảnLýNgườiDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.quảnLýCâuHỏiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.xemKếtQuảThiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,6 +122,11 @@ namespace DangNhap
             this.quảnLýCâuHỏiToolStripMenuItem.Text = "2. Quản lý câu hỏi";
             this.quảnLýCâuHỏiToolStripMenuItem.Click += new System.EventHandler(this.quảnLýCâuHỏiToolStripMenuItem_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(328, 6);
+            // 
             // xemKếtQuảThiToolStripMenuItem
             // 
             this.xemKếtQuảThiToolStripMenuItem.Name = "xemKếtQuảThiToolStripMenuItem";
@@ -134,11 +139,6 @@ namespace DangNhap
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(328, 6);
             // 
             // Frmmain
             // 

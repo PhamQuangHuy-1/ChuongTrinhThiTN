@@ -15,7 +15,7 @@ namespace DangNhap
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
 
         //link database của Hoàng
-        SqlConnection conn = new SqlConnection(@"Data Source=CUYEN\CUYEN;Initial Catalog=Exam;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
         SqlDataAdapter da1 = new SqlDataAdapter();
         DataTable dt1 = new DataTable();
         string MND;
