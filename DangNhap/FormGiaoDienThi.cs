@@ -22,7 +22,7 @@ namespace DangNhap
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
 
         //link database của Hoàng
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=CUYEN\CUYEN;Initial Catalog=Exam;Integrated Security=True");
         public string msv;
         int i;
         private Label label2;
@@ -519,12 +519,12 @@ namespace DangNhap
             // grdData1
             // 
             this.grdData1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdData1.Location = new System.Drawing.Point(286, 12);
+            this.grdData1.Location = new System.Drawing.Point(299, 229);
             this.grdData1.Name = "grdData1";
             this.grdData1.ReadOnly = true;
             this.grdData1.RowHeadersWidth = 62;
             this.grdData1.RowTemplate.Height = 28;
-            this.grdData1.Size = new System.Drawing.Size(266, 112);
+            this.grdData1.Size = new System.Drawing.Size(583, 112);
             this.grdData1.TabIndex = 22;
             this.grdData1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdData1_CellContentClick);
             // 

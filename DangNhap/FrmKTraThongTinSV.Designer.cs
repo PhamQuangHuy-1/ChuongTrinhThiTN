@@ -73,10 +73,10 @@ namespace DangNhap
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Highlight;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(142, 208);
+            this.button1.Location = new System.Drawing.Point(40, 214);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 54);
+            this.button1.Size = new System.Drawing.Size(279, 54);
             this.button1.TabIndex = 3;
             this.button1.Text = "Vào Thi";
             this.button1.UseVisualStyleBackColor = false;
@@ -116,10 +116,10 @@ namespace DangNhap
             // 
             this.button3.BackColor = System.Drawing.SystemColors.Highlight;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(437, 208);
+            this.button3.Location = new System.Drawing.Point(525, 214);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(223, 54);
+            this.button3.Size = new System.Drawing.Size(294, 54);
             this.button3.TabIndex = 9;
             this.button3.Text = "Thoát";
             this.button3.UseVisualStyleBackColor = false;

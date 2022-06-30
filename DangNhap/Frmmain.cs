@@ -47,10 +47,9 @@ namespace DangNhap
 
         }
 
-        private void xemKếtQuảThiToolStripMenuItem_Click(object sender, EventArgs e)
+        private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmKQuaThi f = new FrmKQuaThi();
-            f.Show();
+
         }
     }
 }
