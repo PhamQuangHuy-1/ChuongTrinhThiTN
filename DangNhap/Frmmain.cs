@@ -46,5 +46,10 @@ namespace DangNhap
         {
 
         }
+
+        private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
