@@ -107,5 +107,10 @@ namespace DangNhap
                 SendKeys.Send("\t");
             }
         }
+
+        private void grd1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -510,21 +510,21 @@ namespace DangNhap
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(1, 3);
+            this.textBox1.Location = new System.Drawing.Point(1, 0);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(982, 130);
+            this.textBox1.Size = new System.Drawing.Size(991, 130);
             this.textBox1.TabIndex = 21;
             // 
             // grdData1
             // 
             this.grdData1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdData1.Location = new System.Drawing.Point(299, 229);
+            this.grdData1.Location = new System.Drawing.Point(286, 12);
             this.grdData1.Name = "grdData1";
             this.grdData1.ReadOnly = true;
             this.grdData1.RowHeadersWidth = 62;
             this.grdData1.RowTemplate.Height = 28;
-            this.grdData1.Size = new System.Drawing.Size(583, 112);
+            this.grdData1.Size = new System.Drawing.Size(266, 112);
             this.grdData1.TabIndex = 22;
             this.grdData1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdData1_CellContentClick);
             // 

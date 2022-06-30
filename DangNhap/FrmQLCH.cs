@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace DangNhap
 {
     public partial class FrmQLCH : Form
@@ -21,7 +22,9 @@ namespace DangNhap
         SqlCommand cmd;
         SqlDataAdapter da = new SqlDataAdapter();
         DataTable dt = new DataTable();
-        
+        SqlDataAdapter da1 = new SqlDataAdapter();
+        DataTable dt1 = new DataTable();
+
 
         void loaddata()
         {
@@ -120,6 +123,24 @@ namespace DangNhap
             {
                 SendKeys.Send("\t");
             }
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            //conn.Close();
+            //conn.Open();
+            //string t = "select MaCH, CauHoi, OptionA, OptionB, OptionC, OptionD from CauHoi  ";
+            //da1 = new SqlDataAdapter(t, conn);
+            //dt1 = new DataTable();
+            //dt1.Clear();
+            //da1.Fill(dt1);
+
+            //rptQLCH baocao = new rptQLCH();
+            //baocao.SetDataSource(dt1);
+            frmrptQLCH f = new frmrptQLCH();
+            f.Show();
+
+
         }
     }
 

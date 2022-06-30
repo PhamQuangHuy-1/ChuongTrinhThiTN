@@ -29,6 +29,7 @@ namespace DangNhap
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grd1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -54,6 +55,7 @@ namespace DangNhap
             this.btSua = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -69,18 +71,25 @@ namespace DangNhap
             this.groupBox1.Size = new System.Drawing.Size(957, 301);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // grd1
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grd1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grd1.Location = new System.Drawing.Point(33, 39);
+            this.grd1.Location = new System.Drawing.Point(12, 27);
             this.grd1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grd1.Name = "grd1";
             this.grd1.RowHeadersWidth = 51;
             this.grd1.RowTemplate.Height = 24;
-            this.grd1.Size = new System.Drawing.Size(901, 248);
+            this.grd1.Size = new System.Drawing.Size(939, 266);
             this.grd1.TabIndex = 0;
             this.grd1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd1_CellClick);
             this.grd1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -342,11 +351,22 @@ namespace DangNhap
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(1024, 210);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(125, 59);
+            this.btnReport.TabIndex = 6;
+            this.btnReport.Text = "Xuất báo cáo";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
             // FrmQLCH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1236, 611);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btXoa);
             this.Controls.Add(this.btSua);
@@ -394,5 +414,6 @@ namespace DangNhap
         private System.Windows.Forms.TextBox txtMamon;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReport;
     }
 }

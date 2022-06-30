@@ -66,13 +66,6 @@ namespace DangNhap
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FormDangNhap f = new FormDangNhap();
-            this.Hide();
-            f.Show();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             Application.Exit();
