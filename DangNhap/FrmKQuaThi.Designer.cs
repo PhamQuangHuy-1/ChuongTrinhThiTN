@@ -70,7 +70,7 @@
             this.grdData5.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.grdData5.RowHeadersWidth = 62;
             this.grdData5.RowTemplate.Height = 28;
-            this.grdData5.Size = new System.Drawing.Size(1070, 490);
+            this.grdData5.Size = new System.Drawing.Size(1007, 466);
             this.grdData5.TabIndex = 0;
             // 
             // MaND
@@ -167,7 +167,7 @@
             this.grdData6.Name = "grdData6";
             this.grdData6.RowHeadersWidth = 62;
             this.grdData6.RowTemplate.Height = 28;
-            this.grdData6.Size = new System.Drawing.Size(1070, 490);
+            this.grdData6.Size = new System.Drawing.Size(1007, 466);
             this.grdData6.TabIndex = 17;
             // 
             // MaBL

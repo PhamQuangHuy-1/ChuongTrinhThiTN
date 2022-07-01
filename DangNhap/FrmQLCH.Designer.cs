@@ -196,7 +196,7 @@ namespace DangNhap
             this.label3.Size = new System.Drawing.Size(81, 25);
             this.label3.TabIndex = 21;
             this.label3.Text = "Đáp án";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+           
             // 
             // txtB
             // 
@@ -217,7 +217,7 @@ namespace DangNhap
             this.label4.Size = new System.Drawing.Size(27, 25);
             this.label4.TabIndex = 23;
             this.label4.Text = "A";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            
             // 
             // txtA
             // 
@@ -291,7 +291,7 @@ namespace DangNhap
             this.txtMach.Name = "txtMach";
             this.txtMach.Size = new System.Drawing.Size(286, 31);
             this.txtMach.TabIndex = 0;
-            this.txtMach.TextChanged += new System.EventHandler(this.txtMach_TextChanged);
+            
             // 
             // label8
             // 

@@ -35,7 +35,7 @@ namespace DangNhap
             conn.Open();
             tk = Message1;
             mk = Message2;
-            string sql = "select Ten,MaND,NgaySinh from NguoiDung where  MaND ='"+tk+"' and Password= '"+mk+"';";
+            string sql = "select Ten,MaND,NgaySinh from NguoiDung where  MaND ='"+tk+"' ";
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataReader dta = cmd.ExecuteReader();
             if (dta.Read()==true)
@@ -52,7 +52,7 @@ namespace DangNhap
             conn.Close();
             conn.Open();
             string msv = label5.Text;
-            FormGiaoDienThi Child1 = new FormGiaoDienThi(label5.Text);
+            FormGiaoDienThi Child1 = new FormGiaoDienThi(label5.Text,mk);
             string sql = "select Ten from NguoiDung where MaND ='"+tk+"' and Password= '"+mk+"';";
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataReader dta = cmd.ExecuteReader();

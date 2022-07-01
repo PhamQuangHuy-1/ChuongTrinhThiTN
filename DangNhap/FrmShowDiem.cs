@@ -19,10 +19,12 @@ namespace DangNhap
 
         //Link Database Cuyên
         //SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
-
+        SqlDataAdapter da = new SqlDataAdapter();
+        DataTable dt = new DataTable();
         SqlDataAdapter da1 = new SqlDataAdapter();
         DataTable dt1 = new DataTable();
         string MND;
+        string mk;
       
         public FrmShowDiem()
         {
@@ -33,17 +35,26 @@ namespace DangNhap
         {
             Application.Exit();
         }
-        public FrmShowDiem(string Message) : this()
+        public FrmShowDiem(string Message1,string Message2) : this()
         {
-            MND = Message;                     
+            MND = Message1;
+            mk = Message2;
             conn.Open();
-            string diem = "select count(TraLoi) as 'So Diem' from BaiLam, CauHoi where BaiLam.MaCH= CauHoi.MaCH and BaiLam.TraLoi=CauHoi.DapAn and 'So Diem' is not null and MaND ='"+MND+"'; ";
+            string mamon = "select MaMon from Mon where Password ='"+mk+"'";
+            da = new SqlDataAdapter(mamon, conn);
+            dt = new DataTable();
+            dt.Clear();
+            da.Fill(dt);
+            grdData1.DataSource= dt;
+
+            //"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"
+            string diem = "select count(TraLoi) as 'SoDiem' from BaiLam,CauHoi  where BaiLam.MaCH= CauHoi.MaCH and BaiLam.TraLoi=CauHoi.DapAn and MaND='"+MND+"' and BaiLam.MaMon='"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"' and TraLoi is not null";
             da1 = new SqlDataAdapter(diem, conn);
             dt1 = new DataTable();
             dt1.Clear();
             da1.Fill(dt1);
             grdData3.DataSource= dt1;
-            label2.Text= grdData3.Rows[0].Cells["So Diem"].Value.ToString();           
+            label2.Text= grdData3.Rows[0].Cells["SoDiem"].Value.ToString();           
         }
         private void FrmShowDiem_Load(object sender, EventArgs e)
         {

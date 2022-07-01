@@ -14,8 +14,11 @@ namespace DangNhap
     {
         SqlDataAdapter da = new SqlDataAdapter();
         DataTable dt = new DataTable();
-       
         SqlCommand cmd;
+
+        SqlDataAdapter da1 = new SqlDataAdapter();
+        DataTable dt1 = new DataTable();
+        SqlCommand cmd1;
 
 
         //link database của Huy
@@ -28,6 +31,8 @@ namespace DangNhap
         //SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
 
         public string msv;
+        public string mk;
+
         int i;
         private Label label2;
         private Label label3;
@@ -156,7 +161,8 @@ namespace DangNhap
         private Label label13;
         private Label label14;
         private Label NoiDungCauHoi;
-        private DataGridView grdData2;
+        private Label label60;
+        private DataGridView grdData5;
         private Label label1;
 
         public FormGiaoDienThi()
@@ -294,7 +300,8 @@ namespace DangNhap
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.NoiDungCauHoi = new System.Windows.Forms.Label();
-            this.grdData2 = new System.Windows.Forms.DataGridView();
+            this.label60 = new System.Windows.Forms.Label();
+            this.grdData5 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.grdData1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -307,7 +314,7 @@ namespace DangNhap
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdData2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdData5)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -515,7 +522,7 @@ namespace DangNhap
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.textBox1.Location = new System.Drawing.Point(1, 0);
+            this.textBox1.Location = new System.Drawing.Point(3, 3);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(991, 130);
@@ -525,7 +532,7 @@ namespace DangNhap
             // grdData1
             // 
             this.grdData1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdData1.Location = new System.Drawing.Point(282, 9);
+            this.grdData1.Location = new System.Drawing.Point(259, 9);
             this.grdData1.Name = "grdData1";
             this.grdData1.ReadOnly = true;
             this.grdData1.RowHeadersWidth = 62;
@@ -1729,19 +1736,31 @@ namespace DangNhap
             this.NoiDungCauHoi.Text = "cauhoi";
             this.NoiDungCauHoi.Click += new System.EventHandler(this.label60_Click);
             // 
-            // grdData2
+            // label60
             // 
-            this.grdData2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdData2.Location = new System.Drawing.Point(807, 12);
-            this.grdData2.Name = "grdData2";
-            this.grdData2.RowHeadersWidth = 62;
-            this.grdData2.RowTemplate.Height = 28;
-            this.grdData2.Size = new System.Drawing.Size(122, 82);
-            this.grdData2.TabIndex = 45;
+            this.label60.AutoSize = true;
+            this.label60.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.Location = new System.Drawing.Point(668, 65);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(98, 46);
+            this.label60.TabIndex = 46;
+            this.label60.Text = "mon";
+            // 
+            // grdData5
+            // 
+            this.grdData5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdData5.Location = new System.Drawing.Point(772, 12);
+            this.grdData5.Name = "grdData5";
+            this.grdData5.RowHeadersWidth = 62;
+            this.grdData5.RowTemplate.Height = 28;
+            this.grdData5.Size = new System.Drawing.Size(112, 81);
+            this.grdData5.TabIndex = 47;
             // 
             // FormGiaoDienThi
             // 
             this.ClientSize = new System.Drawing.Size(1320, 723);
+            this.Controls.Add(this.label60);
             this.Controls.Add(this.NoiDungCauHoi);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btNext);
@@ -1768,7 +1787,7 @@ namespace DangNhap
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.grdData1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.grdData2);
+            this.Controls.Add(this.grdData5);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormGiaoDienThi";
             this.Text = "Bài kiểm tra";
@@ -1796,20 +1815,22 @@ namespace DangNhap
             this.panel8.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdData2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdData5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
 
-        public FormGiaoDienThi(string Message) : this()
+        public FormGiaoDienThi(string Message1,string Message2) : this()
         {
             conn.Open();
 
-            msv = Message;
-                     
-            string sql = "select Ten,MaND,NgaySinh from NguoiDung where  MaND ='"+msv+"';";
+            msv = Message1;
+            mk = Message2;
+           
+
+            string sql = "select Ten,MaND,NgaySinh, Mon.TenMon, Mon.MaMon from Mon, NguoiDung where  NguoiDung.MaND ='"+msv+"' and Mon.Password ='"+mk+"';";
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataReader dta = cmd.ExecuteReader();
             if (dta.Read()==true)
@@ -1817,6 +1838,7 @@ namespace DangNhap
                 label3.Text=dta["Ten"].ToString();
                 label4.Text=dta["MaND"].ToString();
                 label7.Text=dta["NgaySinh"].ToString();
+                label60.Text=dta["TenMon"].ToString();
                 timer1.Start();
             }
             conn.Close();
@@ -1824,13 +1846,24 @@ namespace DangNhap
         public void FormGiaoDienThi_Load(object sender, EventArgs e)
         {
             conn.Open();
-            string h = "select top 10 * from CauHoi order by NEWID() ";
+            string h = "select top 10 * from CauHoi,NguoiDung, Mon where NguoiDung.Password=Mon.Password and Mon.MaMon=CauHoi.MaMon order by NEWID() ";
             da = new SqlDataAdapter(h, conn);
             dt = new DataTable();
             dt.Clear();
             da.Fill(dt);
             grdData1.DataSource= dt;
             ShowCauHoi();
+            conn.Close();
+            conn.Open();
+
+            string mamon = "select MaMon from Mon where Password ='"+mk+"'";
+            //SqlCommand cmd1 = new SqlCommand(mamon, conn);
+            //SqlDataReader dta1 = cmd1.ExecuteReader();          
+            da1 = new SqlDataAdapter(mamon, conn);
+            dt1 = new DataTable();
+            dt1.Clear();
+            da1.Fill(dt1);
+            grdData5.DataSource= dt1;
 
         }
         private void ShowCauHoi()
@@ -1917,41 +1950,29 @@ namespace DangNhap
 
         public void button1_Click(object sender, EventArgs e)
         {
-            FrmShowDiem dd = new FrmShowDiem(msv);
+            FrmShowDiem dd = new FrmShowDiem(msv,mk);
 
             if (MessageBox.Show("Bạn có muốn nộp bài thi hay không?", "Thông báo", MessageBoxButtons.YesNo) ==DialogResult.Yes)
             {
                 timer1.Stop();
                 CapNhatDiem();
-                //ShowDiem();                
+                              
             }
             dd.ShowDialog();
         }
-        //private void ShowDiem()
-        //{
-        //    conn.Close();
-        //    conn.Open();
-        //    string diem = "select count(TraLoi) as 'So Diem' from BaiLam,CauHoi where BaiLam.MaCH= CauHoi.MaCH and BaiLam.TraLoi=CauHoi.DapAn and 'So Diem' is not null and MaND ='"+msv+"'; ";
-        //    da1 = new SqlDataAdapter(diem, conn);
-        //    dt1 = new DataTable();
-        //    dt1.Clear();
-        //    da1.Fill(dt1);
-        //    grdData1.DataSource= dt1;
-        //    if (MessageBox.Show("Điểm của bạn là: "+ grdData1.Rows[0].Cells["So Diem"].Value.ToString(), "Thông báo", MessageBoxButtons.OK) ==DialogResult.OK)
-        //    {
-        //        Application.Exit();
-        //    }
-        //}
-        private void CapNhatDiem()
+       
+        public void CapNhatDiem()
         {
-            conn.Close();
-            conn.Open();
-            string updatediem = "update KetQua set SoDiem= (select count(TraLoi) as 'SoDiem' from BaiLam, CauHoi  where BaiLam.MaCH= CauHoi.MaCH and BaiLam.TraLoi=CauHoi.DapAn and MaND = '"+msv+"' and TraLoi is not null) where MaND = '"+msv+"' ";            
-            cmd = conn.CreateCommand();
-            cmd.CommandText= updatediem;
-            cmd.ExecuteNonQuery();
-        }
 
+
+            //string updatediem = "update KetQua set SoDiem= (select count(TraLoi) as 'SoDiem' from BaiLam, CauHoi, Mon where BaiLam.MaCH= CauHoi.MaCH and Mon.MaMon=CauHoi.MaMon and BaiLam.TraLoi=CauHoi.DapAn and MaND = '"+msv+"' and TraLoi is not null) where MaND = '"+msv+"' ";
+            string updatediem1 = "update KetQua set SoDiem = (select count(TraLoi) as 'SoDiem' from BaiLam, CauHoi  where BaiLam.MaCH= CauHoi.MaCH and BaiLam.TraLoi=CauHoi.DapAn and MaND = '11201581' and BaiLam.MaMon='"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"' and TraLoi is not null) where MaND = '11201581' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'";
+                cmd = conn.CreateCommand();
+                cmd.CommandText= updatediem1;
+                cmd.ExecuteNonQuery();
+            
+        }
+       
         private void label60_Click(object sender, EventArgs e)
         {
             NoiDungCauHoi.Height=143;
@@ -2276,7 +2297,7 @@ namespace DangNhap
             if (radioButton6.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[0].Cells["MaCH"].Value.ToString() + "' and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[0].Cells["MaCH"].Value.ToString() + "' and MaND ='"+msv+"' and MaMon = '" + grdData1.Rows[0].Cells["MaMon"].Value.ToString() + "'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2286,7 +2307,8 @@ namespace DangNhap
             if (radioButton7.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[0].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[0].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
+                cmd.ExecuteNonQuery();
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2296,7 +2318,8 @@ namespace DangNhap
             if (radioButton8.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[0].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[0].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
+                cmd.ExecuteNonQuery();
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2306,7 +2329,7 @@ namespace DangNhap
             if (radioButton5.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[0].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[0].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2319,7 +2342,7 @@ namespace DangNhap
             if (radioButton12.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[1].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[1].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2329,7 +2352,7 @@ namespace DangNhap
             if (radioButton11.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[1].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[1].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2339,7 +2362,7 @@ namespace DangNhap
             if (radioButton9.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[1].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[1].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2349,7 +2372,7 @@ namespace DangNhap
             if (radioButton10.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[1].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[1].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2362,7 +2385,7 @@ namespace DangNhap
             if (radioButton16.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[2].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[2].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2373,7 +2396,7 @@ namespace DangNhap
             if (radioButton15.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[2].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[2].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2383,7 +2406,7 @@ namespace DangNhap
             if (radioButton13.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[2].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[2].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2393,7 +2416,7 @@ namespace DangNhap
             if (radioButton14.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[2].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[2].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2405,7 +2428,7 @@ namespace DangNhap
             if (radioButton20.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[3].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[3].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2415,7 +2438,7 @@ namespace DangNhap
             if (radioButton19.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[3].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[3].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2425,7 +2448,7 @@ namespace DangNhap
             if (radioButton17.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[3].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[3].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2435,7 +2458,7 @@ namespace DangNhap
             if (radioButton18.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[3].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[3].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2447,7 +2470,7 @@ namespace DangNhap
             if (radioButton4.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[4].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[4].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2457,7 +2480,7 @@ namespace DangNhap
             if (radioButton19.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[4].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[4].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2467,7 +2490,7 @@ namespace DangNhap
             if (radioButton1.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[4].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[4].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2477,7 +2500,7 @@ namespace DangNhap
             if (radioButton2.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[4].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[4].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2489,7 +2512,7 @@ namespace DangNhap
             if (radioButton24.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[5].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[5].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2499,7 +2522,7 @@ namespace DangNhap
             if (radioButton23.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[5].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[5].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2509,7 +2532,7 @@ namespace DangNhap
             if (radioButton21.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[5].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[5].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2519,7 +2542,7 @@ namespace DangNhap
             if (radioButton22.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[5].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[5].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2531,7 +2554,7 @@ namespace DangNhap
             if (radioButton28.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[6].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[6].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2541,7 +2564,7 @@ namespace DangNhap
             if (radioButton27.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[6].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[6].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2551,7 +2574,7 @@ namespace DangNhap
             if (radioButton25.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[6].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[6].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2561,7 +2584,7 @@ namespace DangNhap
             if (radioButton26.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[6].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[6].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2573,7 +2596,7 @@ namespace DangNhap
             if (radioButton32.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[7].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[7].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2583,7 +2606,7 @@ namespace DangNhap
             if (radioButton31.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[7].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[7].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2593,7 +2616,7 @@ namespace DangNhap
             if (radioButton29.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[7].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[7].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2603,7 +2626,7 @@ namespace DangNhap
             if (radioButton30.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[7].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[7].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2614,7 +2637,7 @@ namespace DangNhap
             if (radioButton36.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[8].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[8].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2624,7 +2647,7 @@ namespace DangNhap
             if (radioButton35.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[8].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[8].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2634,7 +2657,7 @@ namespace DangNhap
             if (radioButton33.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[8].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[8].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2644,7 +2667,7 @@ namespace DangNhap
             if (radioButton34.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[8].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[8].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2656,7 +2679,7 @@ namespace DangNhap
             if (radioButton40.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[9].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'A' where MaCH = '" + grdData1.Rows[9].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2666,7 +2689,7 @@ namespace DangNhap
             if (radioButton39.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[9].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'B' where MaCH = '" + grdData1.Rows[9].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2676,7 +2699,7 @@ namespace DangNhap
             if (radioButton37.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[9].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'C' where MaCH = '" + grdData1.Rows[9].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }
@@ -2686,7 +2709,7 @@ namespace DangNhap
             if (radioButton38.Checked==true)
             {
                 cmd = conn.CreateCommand();
-                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[9].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"'; ";
+                cmd.CommandText = " update BaiLam set TraLoi= 'D' where MaCH = '" + grdData1.Rows[9].Cells["MaCH"].Value.ToString() + "'and MaND ='"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'; ";
                 cmd.ExecuteNonQuery();
             }
         }

@@ -23,6 +23,9 @@ namespace DangNhap
 
         //Link Database Cuyên
         //SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
+        SqlCommand cmd;
+        string tk;
+        string mk;
         public FormDangNhap()
         {
             InitializeComponent();
@@ -38,11 +41,11 @@ namespace DangNhap
             try
             {
                 conn.Open();
-                string tk = txtTentk.Text;
-                string mk = txtMatkhau.Text;
+                tk = txtTentk.Text;
+                mk = txtMatkhau.Text;
                 Frmmain f = new Frmmain();
                 FrmKTraThongTinSV d = new FrmKTraThongTinSV(txtTentk.Text, txtMatkhau.Text);
-                string sql = "Select MaQND, MaND, Password from NguoiDung where MaND= '"+tk+"'and Password= '"+mk+"';";
+                string sql = "Select MaQND, MaND, Mon.Password from NguoiDung, Mon where MaND= '"+tk+"'and Mon.Password= '"+mk+"';";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataReader dta= cmd.ExecuteReader();
                 if (dta.Read()==true) 
@@ -50,12 +53,14 @@ namespace DangNhap
                     string l = dta["MaQND"].ToString();
                     if (l == "1")
                     {
+                        CapNhatMK();
                         d.Show();
                     }
-                    else  
-                    {
-                        f.Show();
-                    }
+                   
+                }
+                else if(dta.Read()==false)
+                {
+                    f.Show();
                 }
                 else 
                 {
@@ -68,7 +73,15 @@ namespace DangNhap
             }
             this.Hide();
         }
-
+        private void CapNhatMK()
+        {
+            conn.Close();
+            conn.Open();
+            string updatediem = "update NguoiDung set Password = '"+mk+"' where MaND = '"+tk+"'";
+            cmd = conn.CreateCommand();
+            cmd.CommandText= updatediem;
+            cmd.ExecuteNonQuery();
+        }
         private void txtTentk_TextChanged(object sender, EventArgs e)
         {
 

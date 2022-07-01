@@ -32,7 +32,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.grdData3 = new System.Windows.Forms.DataGridView();
+            this.grdData1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.grdData3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdData1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -40,7 +42,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(158, 92);
+            this.label1.Location = new System.Drawing.Point(120, 108);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(330, 46);
             this.label1.TabIndex = 0;
@@ -63,7 +65,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(472, 92);
+            this.label2.Location = new System.Drawing.Point(436, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 46);
             this.label2.TabIndex = 2;
@@ -72,12 +74,22 @@
             // grdData3
             // 
             this.grdData3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdData3.Location = new System.Drawing.Point(166, 96);
+            this.grdData3.Location = new System.Drawing.Point(130, 114);
             this.grdData3.Name = "grdData3";
             this.grdData3.RowHeadersWidth = 62;
             this.grdData3.RowTemplate.Height = 28;
-            this.grdData3.Size = new System.Drawing.Size(319, 42);
+            this.grdData3.Size = new System.Drawing.Size(320, 40);
             this.grdData3.TabIndex = 3;
+            // 
+            // grdData1
+            // 
+            this.grdData1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdData1.Location = new System.Drawing.Point(444, 122);
+            this.grdData1.Name = "grdData1";
+            this.grdData1.RowHeadersWidth = 62;
+            this.grdData1.RowTemplate.Height = 28;
+            this.grdData1.Size = new System.Drawing.Size(85, 32);
+            this.grdData1.TabIndex = 4;
             // 
             // FrmShowDiem
             // 
@@ -88,11 +100,13 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.grdData3);
+            this.Controls.Add(this.grdData1);
             this.Name = "FrmShowDiem";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông báo";
             ((System.ComponentModel.ISupportInitialize)(this.grdData3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdData1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,5 +118,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView grdData3;
+        private System.Windows.Forms.DataGridView grdData1;
     }
 }

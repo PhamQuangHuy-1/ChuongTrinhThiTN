@@ -98,12 +98,7 @@ namespace DangNhap
             cmd.CommandText = "delete  from CauHoi where MaCH = '"+txtMach.Text+"'";
             cmd.ExecuteNonQuery();
             loaddata();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+        } 
 
         private void btSua_Click(object sender, EventArgs e)
         {
@@ -124,18 +119,6 @@ namespace DangNhap
             {
                 SendKeys.Send("\t");
             }
-        }
-
-       
-
-        private void txtMach_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
