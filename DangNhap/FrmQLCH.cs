@@ -149,17 +149,14 @@ namespace DangNhap
             dt1.Clear();
             da1.Fill(dt1);
 
-            rptQLCH baocao = new rptQLCH();
+            QLCH baocao = new QLCH();
             baocao.SetDataSource(dt1);
             FrmXuatCauHoi f = new FrmXuatCauHoi();
             
             f.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
+       
     }
 
 }

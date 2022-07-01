@@ -392,18 +392,18 @@ namespace DangNhap
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Orange;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1259, 687);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(147, 56);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Thoát";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button1_Click);
+            //this.button3.BackColor = System.Drawing.Color.Orange;
+            //this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            //this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            //this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.button3.Location = new System.Drawing.Point(1259, 687);
+            //this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            //this.button3.Name = "button3";
+            //this.button3.Size = new System.Drawing.Size(147, 56);
+            //this.button3.TabIndex = 5;
+            //this.button3.Text = "Thoát";
+            //this.button3.UseVisualStyleBackColor = false;
+            //this.button3.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -427,7 +427,7 @@ namespace DangNhap
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1462, 792);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
+           
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btXoa);
             this.Controls.Add(this.btSua);
