@@ -17,13 +17,14 @@ namespace DangNhap
 
 
         //link database của Hoàng
-        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
 
         //Link Database Cuyên
-        SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
-
+        //SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
+        SqlDataAdapter da2 = new SqlDataAdapter();
         SqlDataAdapter da3 = new SqlDataAdapter();
         SqlDataAdapter da4 = new SqlDataAdapter();
+        DataTable dt2 = new DataTable();
         DataTable dt3 = new DataTable();
         DataTable dt4 = new DataTable();
 
@@ -52,6 +53,17 @@ namespace DangNhap
 
         private void button2_Click(object sender, EventArgs e)
         {
+            conn.Close();
+            conn.Open();
+            string t = "select NguoiDung.Ten,NguoiDung.MaND,Mon.Ten,Exam.Ten, SoDiem from NguoiDung, Mon,Exam,KetQua where NguoiDung.MaQND='1' and KetQua.MaMon=Mon.MaMon and KetQua.ExamID=Exam.ExamID and KetQua.MaND= NguoiDung.MaND";
+            da2 = new SqlDataAdapter(t, conn);
+            dt2 = new DataTable();
+            dt2.Clear();
+            da2.Fill(dt2);
+
+            KQKT baocao = new KQKT();
+            baocao.SetDataSource(dt2);
+
             XuatKQ frm = new XuatKQ();
             frm.Show();
 

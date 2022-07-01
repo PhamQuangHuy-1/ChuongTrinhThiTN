@@ -22,10 +22,10 @@ namespace DangNhap
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
 
         //link database của Hoàng
-        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
 
         //Link Database Cuyên
-        SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
+        //SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
 
         public string msv;
         int i;
@@ -538,7 +538,7 @@ namespace DangNhap
             // 
             this.btPre.BackColor = System.Drawing.Color.Orange;
             this.btPre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPre.Location = new System.Drawing.Point(687, 768);
+            this.btPre.Location = new System.Drawing.Point(403, 604);
             this.btPre.Name = "btPre";
             this.btPre.Size = new System.Drawing.Size(149, 44);
             this.btPre.TabIndex = 23;
@@ -550,7 +550,7 @@ namespace DangNhap
             // 
             this.btNext.BackColor = System.Drawing.Color.Orange;
             this.btNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNext.Location = new System.Drawing.Point(842, 768);
+            this.btNext.Location = new System.Drawing.Point(679, 604);
             this.btNext.Name = "btNext";
             this.btNext.Size = new System.Drawing.Size(149, 44);
             this.btNext.TabIndex = 24;
@@ -562,7 +562,7 @@ namespace DangNhap
             // 
             this.button1.BackColor = System.Drawing.Color.Orange;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1093, 768);
+            this.button1.Location = new System.Drawing.Point(1084, 605);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 44);
             this.button1.TabIndex = 25;
@@ -1741,7 +1741,7 @@ namespace DangNhap
             // 
             // FormGiaoDienThi
             // 
-            this.ClientSize = new System.Drawing.Size(1320, 824);
+            this.ClientSize = new System.Drawing.Size(1320, 723);
             this.Controls.Add(this.NoiDungCauHoi);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btNext);

@@ -17,10 +17,10 @@ namespace DangNhap
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
 
         //link database của Hoàng
-        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
 
         //Link Database Cuyên
-        SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
+        //SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
 
 
         SqlCommand cmd;
@@ -126,23 +126,7 @@ namespace DangNhap
             }
         }
 
-        private void btnReport_Click(object sender, EventArgs e)
-        {
-            //conn.Close();
-            //conn.Open();
-            //string t = "select MaCH, CauHoi, OptionA, OptionB, OptionC, OptionD from CauHoi  ";
-            //da1 = new SqlDataAdapter(t, conn);
-            //dt1 = new DataTable();
-            //dt1.Clear();
-            //da1.Fill(dt1);
-
-            //rptQLCH baocao = new rptQLCH();
-            //baocao.SetDataSource(dt1);
-            frmrptQLCH f = new frmrptQLCH();
-            f.Show();
-
-
-        }
+       
 
         private void txtMach_TextChanged(object sender, EventArgs e)
         {
@@ -152,6 +136,24 @@ namespace DangNhap
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            conn.Close();
+            conn.Open();
+            string t = "select MaCH, CauHoi, OptionA, OptionB, OptionC, OptionD, DapAn from CauHoi   ";
+            da1 = new SqlDataAdapter(t, conn);
+            dt1 = new DataTable();
+            dt1.Clear();
+            da1.Fill(dt1);
+
+            rptQLCH baocao = new rptQLCH();
+            baocao.SetDataSource(dt1);
+            FrmXuatCauHoi f = new FrmXuatCauHoi();
+            
+            f.Show();
         }
     }
 

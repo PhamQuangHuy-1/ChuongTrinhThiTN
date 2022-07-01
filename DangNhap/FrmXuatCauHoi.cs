@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DangNhap
 {
-    public partial class frmrptQLCH : Form
+    public partial class FrmXuatCauHoi : Form
     {
-        public frmrptQLCH()
+        public FrmXuatCauHoi()
         {
             InitializeComponent();
         }

@@ -26,18 +26,18 @@ namespace DangNhap
 
         private void XuatKQ_Load(object sender, EventArgs e)
         {
-            conn.Open();
-            string h = "select * from KetQua, ";
-            da3 = new SqlDataAdapter(h, conn);
-            dt3 = new DataTable();
-            dt3.Clear();
-            da3.Fill(dt3);
+            //conn.Open();
+            //string h = "select * from KetQua, ";
+            //da3 = new SqlDataAdapter(h, conn);
+            //dt3 = new DataTable();
+            //dt3.Clear();
+            //da3.Fill(dt3);
 
-            KQKT rpt = new KQKT();
-            rpt.SetDataSource(dt3);
-            crystalReportViewer2.ReportSource = rpt;
-            conn.Close();
-            conn.Dispose();
+            //KQKT rpt = new KQKT();
+            //rpt.SetDataSource(dt3);
+            //crystalReportViewer2.ReportSource = rpt;
+            //conn.Close();
+            //conn.Dispose();
         }
 
         private void crystalReportViewer2_Load(object sender, EventArgs e)

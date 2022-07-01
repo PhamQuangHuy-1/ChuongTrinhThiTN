@@ -55,6 +55,7 @@ namespace DangNhap
             this.btXoa = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -89,6 +90,7 @@ namespace DangNhap
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.txtMamon);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtD);
@@ -371,7 +373,22 @@ namespace DangNhap
             this.btnReport.TabIndex = 6;
             this.btnReport.Text = "Xuất báo cáo";
             this.btnReport.UseVisualStyleBackColor = true;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+         
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Orange;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(633, 29);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(142, 72);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "xuất";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FrmQLCH
             // 
@@ -431,5 +448,6 @@ namespace DangNhap
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Button button2;
     }
 }

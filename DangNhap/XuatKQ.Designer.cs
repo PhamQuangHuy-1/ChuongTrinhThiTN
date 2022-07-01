@@ -31,6 +31,7 @@
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.crystalReportViewer2 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.KQKT1 = new DangNhap.KQKT();
+            this.KQKT2 = new DangNhap.KQKT();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -52,7 +53,7 @@
             this.crystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer2.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer2.Name = "crystalReportViewer2";
-            this.crystalReportViewer2.ReportSource = this.KQKT1;
+            this.crystalReportViewer2.ReportSource = this.KQKT2;
             this.crystalReportViewer2.Size = new System.Drawing.Size(1268, 759);
             this.crystalReportViewer2.TabIndex = 1;
             this.crystalReportViewer2.Load += new System.EventHandler(this.crystalReportViewer2_Load);
@@ -78,5 +79,6 @@
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer2;
         private KQKT KQKT1;
+        private KQKT KQKT2;
     }
 }

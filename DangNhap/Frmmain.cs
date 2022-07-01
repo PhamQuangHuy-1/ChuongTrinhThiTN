@@ -57,5 +57,10 @@ namespace DangNhap
             FrmKQuaThi f = new FrmKQuaThi();
             f.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

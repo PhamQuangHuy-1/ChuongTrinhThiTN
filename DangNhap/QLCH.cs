@@ -16,14 +16,14 @@ namespace DangNhap {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptQLCH : ReportClass {
+    public class QLCH : ReportClass {
         
-        public rptQLCH() {
+        public QLCH() {
         }
         
         public override string ResourceName {
             get {
-                return "rptQLCH.rpt";
+                return "QLCH.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace DangNhap {
         
         public override string FullResourceName {
             get {
-                return "DangNhap.rptQLCH.rpt";
+                return "DangNhap.QLCH.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace DangNhap {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptQLCH : Component, ICachedReport {
+    public class CachedQLCH : Component, ICachedReport {
         
-        public CachedrptQLCH() {
+        public CachedQLCH() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace DangNhap {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptQLCH rpt = new rptQLCH();
+            QLCH rpt = new QLCH();
             rpt.Site = this.Site;
             return rpt;
         }

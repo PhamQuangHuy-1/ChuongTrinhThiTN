@@ -1,6 +1,6 @@
 ﻿namespace DangNhap
 {
-    partial class frmrptQLCH
+    partial class FrmXuatCauHoi
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmrptQLCH));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.rptQLCH1 = new DangNhap.rptQLCH();
             this.SuspendLayout();
@@ -42,19 +41,20 @@
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ReportSource = this.rptQLCH1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(894, 521);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
-            // frmrptQLCH
+            // FrmXuatCauHoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(894, 521);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmrptQLCH";
-            this.Text = "frmrptQLCH";
+            this.Name = "FrmXuatCauHoi";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.Text = "Đề thi ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
@@ -63,6 +63,7 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        //private rptQLCH QLCH1;
         private rptQLCH rptQLCH1;
     }
 }
