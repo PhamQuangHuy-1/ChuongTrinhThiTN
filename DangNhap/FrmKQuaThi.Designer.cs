@@ -33,13 +33,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKQuaThi));
             this.grdData5 = new System.Windows.Forms.DataGridView();
             this.MaND = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExamID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnXuatBang = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.grdData6 = new System.Windows.Forms.DataGridView();
             this.MaBL = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -135,16 +136,16 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnXuatBang
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(63, 511);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(215, 42);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Xuất bảng điểm";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnXuatBang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatBang.Location = new System.Drawing.Point(12, 510);
+            this.btnXuatBang.Name = "btnXuatBang";
+            this.btnXuatBang.Size = new System.Drawing.Size(215, 42);
+            this.btnXuatBang.TabIndex = 15;
+            this.btnXuatBang.Text = "Xuất bảng điểm";
+            this.btnXuatBang.UseVisualStyleBackColor = true;
+            this.btnXuatBang.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -180,9 +181,9 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(242, 511);
+            this.button4.Location = new System.Drawing.Point(222, 511);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(129, 42);
+            this.button4.Size = new System.Drawing.Size(149, 42);
             this.button4.TabIndex = 18;
             this.button4.Text = "Quay lại";
             this.button4.UseVisualStyleBackColor = true;
@@ -196,10 +197,11 @@
             this.ClientSize = new System.Drawing.Size(1094, 565);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnXuatBang);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.grdData5);
             this.Controls.Add(this.grdData6);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmKQuaThi";
             this.Text = "FrmKQuaThi";
             this.Load += new System.EventHandler(this.FrmKQuaThi_Load);
@@ -213,7 +215,7 @@
 
         private System.Windows.Forms.DataGridView grdData5;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnXuatBang;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaND;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaMon;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExamID;

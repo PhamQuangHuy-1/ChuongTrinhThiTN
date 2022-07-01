@@ -17,10 +17,12 @@ namespace DangNhap
         //link database của Huy
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
 
-         
-        //link database của Hoàng
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
 
+        //link database của Hoàng
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+
+        //Link Database Cuyên
+        SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
         public FormDangNhap()
         {
             InitializeComponent();
@@ -94,6 +96,14 @@ namespace DangNhap
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormDangNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("\t");
+            }
         }
     }   
 }

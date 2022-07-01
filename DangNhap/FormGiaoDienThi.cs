@@ -22,7 +22,11 @@ namespace DangNhap
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
 
         //link database của Hoàng
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+
+        //Link Database Cuyên
+        SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
+
         public string msv;
         int i;
         private Label label2;
@@ -162,6 +166,7 @@ namespace DangNhap
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGiaoDienThi));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -308,7 +313,7 @@ namespace DangNhap
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
@@ -319,7 +324,7 @@ namespace DangNhap
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 65);
             this.label2.Name = "label2";
@@ -330,7 +335,7 @@ namespace DangNhap
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(145, 65);
             this.label3.Name = "label3";
@@ -341,7 +346,7 @@ namespace DangNhap
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(184, 9);
             this.label4.Name = "label4";
@@ -352,7 +357,7 @@ namespace DangNhap
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label5.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(558, 9);
             this.label5.Name = "label5";
@@ -363,7 +368,7 @@ namespace DangNhap
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(558, 65);
             this.label6.Name = "label6";
@@ -374,7 +379,7 @@ namespace DangNhap
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label7.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(695, 9);
             this.label7.Name = "label7";
@@ -386,7 +391,7 @@ namespace DangNhap
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1061, 9);
+            this.label8.Location = new System.Drawing.Point(1060, 25);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(183, 40);
             this.label8.TabIndex = 7;
@@ -509,12 +514,13 @@ namespace DangNhap
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.textBox1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.textBox1.Location = new System.Drawing.Point(1, 0);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(991, 130);
             this.textBox1.TabIndex = 21;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // grdData1
             // 
@@ -530,9 +536,9 @@ namespace DangNhap
             // 
             // btPre
             // 
-            this.btPre.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btPre.BackColor = System.Drawing.Color.Orange;
             this.btPre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPre.Location = new System.Drawing.Point(475, 588);
+            this.btPre.Location = new System.Drawing.Point(687, 768);
             this.btPre.Name = "btPre";
             this.btPre.Size = new System.Drawing.Size(149, 44);
             this.btPre.TabIndex = 23;
@@ -542,9 +548,9 @@ namespace DangNhap
             // 
             // btNext
             // 
-            this.btNext.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btNext.BackColor = System.Drawing.Color.Orange;
             this.btNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNext.Location = new System.Drawing.Point(733, 588);
+            this.btNext.Location = new System.Drawing.Point(842, 768);
             this.btNext.Name = "btNext";
             this.btNext.Size = new System.Drawing.Size(149, 44);
             this.btNext.TabIndex = 24;
@@ -554,9 +560,9 @@ namespace DangNhap
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.BackColor = System.Drawing.Color.Orange;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1124, 598);
+            this.button1.Location = new System.Drawing.Point(1093, 768);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 44);
             this.button1.TabIndex = 25;
@@ -1735,7 +1741,7 @@ namespace DangNhap
             // 
             // FormGiaoDienThi
             // 
-            this.ClientSize = new System.Drawing.Size(1285, 693);
+            this.ClientSize = new System.Drawing.Size(1320, 824);
             this.Controls.Add(this.NoiDungCauHoi);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btNext);
@@ -1763,7 +1769,9 @@ namespace DangNhap
             this.Controls.Add(this.grdData1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.grdData2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormGiaoDienThi";
+            this.Text = "Bài kiểm tra";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormGiaoDienThi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdData1)).EndInit();
@@ -2684,6 +2692,16 @@ namespace DangNhap
         }
 
         private void grdData1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

@@ -29,8 +29,10 @@ namespace DangNhap
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQLND));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.grd1 = new System.Windows.Forms.DataGridView();
+            this.MaND = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -46,7 +48,6 @@ namespace DangNhap
             this.txtTennd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMand = new System.Windows.Forms.TextBox();
-            this.MaND = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -77,6 +78,14 @@ namespace DangNhap
             this.grd1.TabIndex = 0;
             this.grd1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd1_CellClick);
             this.grd1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd1_CellContentClick);
+            // 
+            // MaND
+            // 
+            this.MaND.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaND.DataPropertyName = "MaND";
+            this.MaND.HeaderText = "MaND";
+            this.MaND.MinimumWidth = 8;
+            this.MaND.Name = "MaND";
             // 
             // groupBox2
             // 
@@ -249,14 +258,7 @@ namespace DangNhap
             this.txtMand.Name = "txtMand";
             this.txtMand.Size = new System.Drawing.Size(132, 31);
             this.txtMand.TabIndex = 0;
-            // 
-            // MaND
-            // 
-            this.MaND.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaND.DataPropertyName = "MaND";
-            this.MaND.HeaderText = "MaND";
-            this.MaND.MinimumWidth = 8;
-            this.MaND.Name = "MaND";
+            this.txtMand.TextChanged += new System.EventHandler(this.txtMand_TextChanged);
             // 
             // FrmQLND
             // 
@@ -265,6 +267,7 @@ namespace DangNhap
             this.ClientSize = new System.Drawing.Size(900, 628);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmQLND";

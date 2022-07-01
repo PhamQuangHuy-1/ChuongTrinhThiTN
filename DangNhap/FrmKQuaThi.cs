@@ -17,7 +17,11 @@ namespace DangNhap
 
 
         //link database của Hoàng
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+
+        //Link Database Cuyên
+        SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
+
         SqlDataAdapter da3 = new SqlDataAdapter();
         SqlDataAdapter da4 = new SqlDataAdapter();
         DataTable dt3 = new DataTable();
@@ -48,6 +52,8 @@ namespace DangNhap
 
         private void button2_Click(object sender, EventArgs e)
         {
+            XuatKQ frm = new XuatKQ();
+            frm.Show();
 
         }
 
@@ -63,7 +69,7 @@ namespace DangNhap
             da4.Fill(dt4);
             grdData6.DataSource= dt4;
             button4.Visible=true;
-            button2.Visible=false;
+            btnXuatBang.Visible=false;
             button3.Visible=false;
             grdData5.Hide();
             
@@ -75,7 +81,7 @@ namespace DangNhap
 
             grdData5.Show();
             button4.Visible=false;
-            button2.Visible=true;
+            btnXuatBang.Visible=true;
             button3.Visible=true;
         }
 
