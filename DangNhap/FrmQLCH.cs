@@ -138,8 +138,8 @@ namespace DangNhap
 
             //rptQLCH baocao = new rptQLCH();
             //baocao.SetDataSource(dt1);
-            frmrptQLCH f = new frmrptQLCH();
-            f.Show();
+            //frmrptQLCH f = new frmrptQLCH();
+            //f.Show();
 
 
         }
@@ -152,6 +152,11 @@ namespace DangNhap
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 

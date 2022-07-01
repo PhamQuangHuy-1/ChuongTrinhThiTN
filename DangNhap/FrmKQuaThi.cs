@@ -52,8 +52,8 @@ namespace DangNhap
 
         private void button2_Click(object sender, EventArgs e)
         {
-            XuatKQ frm = new XuatKQ();
-            frm.Show();
+            XuatKQ f = new XuatKQ();
+            f.Show();
 
         }
 

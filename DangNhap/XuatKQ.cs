@@ -27,7 +27,7 @@ namespace DangNhap
         private void XuatKQ_Load(object sender, EventArgs e)
         {
             conn.Open();
-            string h = "select * from KetQua, ";
+            string h = "select ND.Ten, ND.MaND, mon.Ten, e.Ten,KQ.SoDiem from KetQua KQ, NguoiDung ND, Mon mon,Exam e where ND.MaND=KQ.MaND and KQ.MaMon=mon.MaMon and e.ExamID=KQ.ExamID and  ND.MaQND='1' and KQ.SoDiem is not null";
             da3 = new SqlDataAdapter(h, conn);
             dt3 = new DataTable();
             dt3.Clear();

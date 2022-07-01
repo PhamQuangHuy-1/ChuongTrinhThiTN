@@ -68,7 +68,7 @@
             this.Name = "XuatKQ";
             this.Text = "Kết quả thi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.XuatKQ_Load);
+            
             this.ResumeLayout(false);
 
         }
