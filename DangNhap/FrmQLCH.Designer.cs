@@ -311,10 +311,10 @@ namespace DangNhap
             this.btThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThem.Location = new System.Drawing.Point(1277, 410);
+            this.btThem.Location = new System.Drawing.Point(1259, 405);
             this.btThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(142, 72);
+            this.btThem.Size = new System.Drawing.Size(142, 56);
             this.btThem.TabIndex = 2;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = false;
@@ -326,10 +326,10 @@ namespace DangNhap
             this.btSua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSua.Location = new System.Drawing.Point(1292, 511);
+            this.btSua.Location = new System.Drawing.Point(1259, 499);
             this.btSua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(142, 72);
+            this.btSua.Size = new System.Drawing.Size(142, 56);
             this.btSua.TabIndex = 3;
             this.btSua.Text = "Sửa ";
             this.btSua.UseVisualStyleBackColor = false;
@@ -341,10 +341,10 @@ namespace DangNhap
             this.btXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXoa.Location = new System.Drawing.Point(1297, 597);
+            this.btXoa.Location = new System.Drawing.Point(1259, 593);
             this.btXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(142, 72);
+            this.btXoa.Size = new System.Drawing.Size(142, 56);
             this.btXoa.TabIndex = 4;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = false;
@@ -356,10 +356,10 @@ namespace DangNhap
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1297, 679);
+            this.button1.Location = new System.Drawing.Point(1263, 689);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 55);
+            this.button1.Size = new System.Drawing.Size(147, 56);
             this.button1.TabIndex = 5;
             this.button1.Text = "Thoát";
             this.button1.UseVisualStyleBackColor = false;
@@ -390,12 +390,44 @@ namespace DangNhap
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Orange;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(1259, 687);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(147, 56);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Thoát";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Orange;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(1259, 288);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(147, 56);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "xuất câu hỏi";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FrmQLCH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1462, 792);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btXoa);
             this.Controls.Add(this.btSua);
