@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
+
 namespace DangNhap
 {
     public partial class XuatKQ : Form

@@ -48,33 +48,39 @@ namespace DangNhap
             this.txtTennd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMand = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.grd1);
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(168, 268);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(886, 322);
+            this.groupBox1.Size = new System.Drawing.Size(1849, 604);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Danh sách người dùng";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // grd1
             // 
             this.grd1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grd1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaND});
-            this.grd1.Location = new System.Drawing.Point(28, 28);
+            this.grd1.Location = new System.Drawing.Point(28, 61);
             this.grd1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grd1.Name = "grd1";
             this.grd1.RowHeadersWidth = 51;
             this.grd1.RowTemplate.Height = 24;
-            this.grd1.Size = new System.Drawing.Size(837, 272);
+            this.grd1.Size = new System.Drawing.Size(1790, 507);
             this.grd1.TabIndex = 0;
             this.grd1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd1_CellClick);
             this.grd1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd1_CellContentClick);
@@ -89,10 +95,8 @@ namespace DangNhap
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.AutoSize = true;
+            this.groupBox2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtMk);
             this.groupBox2.Controls.Add(this.label4);
@@ -103,25 +107,26 @@ namespace DangNhap
             this.groupBox2.Controls.Add(this.txtTennd);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtMand);
-            this.groupBox2.Location = new System.Drawing.Point(18, 335);
+            this.groupBox2.Location = new System.Drawing.Point(196, 902);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(867, 251);
+            this.groupBox2.Size = new System.Drawing.Size(1790, 327);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button4.AutoSize = true;
+            this.button4.BackColor = System.Drawing.Color.Orange;
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(775, 211);
+            this.button4.Location = new System.Drawing.Point(2024, 1178);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(92, 39);
+            this.button4.Size = new System.Drawing.Size(135, 49);
             this.button4.TabIndex = 13;
             this.button4.Text = "Thoát";
             this.button4.UseVisualStyleBackColor = false;
@@ -129,11 +134,13 @@ namespace DangNhap
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.Location = new System.Drawing.Point(613, 90);
+            this.button3.AutoSize = true;
+            this.button3.BackColor = System.Drawing.Color.Orange;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(2024, 994);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(119, 58);
+            this.button3.Size = new System.Drawing.Size(135, 49);
             this.button3.TabIndex = 12;
             this.button3.Text = "Sửa";
             this.button3.UseVisualStyleBackColor = false;
@@ -141,11 +148,13 @@ namespace DangNhap
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(613, 160);
+            this.button2.AutoSize = true;
+            this.button2.BackColor = System.Drawing.Color.Orange;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(2024, 1086);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 58);
+            this.button2.Size = new System.Drawing.Size(135, 49);
             this.button2.TabIndex = 11;
             this.button2.Text = "Xóa";
             this.button2.UseVisualStyleBackColor = false;
@@ -153,11 +162,13 @@ namespace DangNhap
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(613, 26);
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.Orange;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(2024, 902);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 58);
+            this.button1.Size = new System.Drawing.Size(135, 49);
             this.button1.TabIndex = 10;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = false;
@@ -166,8 +177,8 @@ namespace DangNhap
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 188);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(575, 251);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 25);
             this.label5.TabIndex = 9;
@@ -175,38 +186,38 @@ namespace DangNhap
             // 
             // txtMk
             // 
-            this.txtMk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMk.Location = new System.Drawing.Point(194, 184);
+            this.txtMk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMk.Location = new System.Drawing.Point(763, 246);
             this.txtMk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMk.Name = "txtMk";
-            this.txtMk.Size = new System.Drawing.Size(185, 31);
+            this.txtMk.Size = new System.Drawing.Size(419, 30);
             this.txtMk.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 142);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(575, 202);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 25);
+            this.label4.Size = new System.Drawing.Size(95, 25);
             this.label4.TabIndex = 7;
             this.label4.Text = "Mã QND";
             // 
             // txtMaqnd
             // 
-            this.txtMaqnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaqnd.Location = new System.Drawing.Point(194, 146);
+            this.txtMaqnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaqnd.Location = new System.Drawing.Point(763, 198);
             this.txtMaqnd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaqnd.Name = "txtMaqnd";
-            this.txtMaqnd.Size = new System.Drawing.Size(132, 31);
+            this.txtMaqnd.Size = new System.Drawing.Size(419, 30);
             this.txtMaqnd.TabIndex = 6;
             this.txtMaqnd.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 105);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(575, 153);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 25);
             this.label3.TabIndex = 5;
@@ -214,37 +225,37 @@ namespace DangNhap
             // 
             // txtNgaysinh
             // 
-            this.txtNgaysinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgaysinh.Location = new System.Drawing.Point(194, 105);
+            this.txtNgaysinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgaysinh.Location = new System.Drawing.Point(763, 150);
             this.txtNgaysinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNgaysinh.Name = "txtNgaysinh";
-            this.txtNgaysinh.Size = new System.Drawing.Size(132, 31);
+            this.txtNgaysinh.Size = new System.Drawing.Size(419, 30);
             this.txtNgaysinh.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 59);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(575, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 25);
+            this.label2.Size = new System.Drawing.Size(163, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tên người dùng";
             // 
             // txtTennd
             // 
-            this.txtTennd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTennd.Location = new System.Drawing.Point(194, 64);
+            this.txtTennd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTennd.Location = new System.Drawing.Point(763, 102);
             this.txtTennd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTennd.Name = "txtTennd";
-            this.txtTennd.Size = new System.Drawing.Size(228, 31);
+            this.txtTennd.Size = new System.Drawing.Size(419, 30);
             this.txtTennd.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 22);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(575, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 25);
             this.label1.TabIndex = 1;
@@ -252,33 +263,53 @@ namespace DangNhap
             // 
             // txtMand
             // 
-            this.txtMand.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMand.Location = new System.Drawing.Point(194, 22);
+            this.txtMand.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMand.Location = new System.Drawing.Point(763, 54);
             this.txtMand.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMand.Name = "txtMand";
-            this.txtMand.Size = new System.Drawing.Size(132, 31);
+            this.txtMand.Size = new System.Drawing.Size(419, 30);
             this.txtMand.TabIndex = 0;
             this.txtMand.TextChanged += new System.EventHandler(this.txtMand_TextChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, -100);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(2247, 431);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 53;
+            this.pictureBox2.TabStop = false;
             // 
             // FrmQLND
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 628);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(2244, 1370);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.pictureBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmQLND";
-            this.Text = "FrmQLND";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quản lý người dùng";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmQLND_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmQLND_KeyDown);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grd1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -302,5 +333,6 @@ namespace DangNhap
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaND;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

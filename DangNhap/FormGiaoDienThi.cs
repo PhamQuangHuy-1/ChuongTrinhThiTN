@@ -18,32 +18,26 @@ namespace DangNhap
 
         SqlDataAdapter da1 = new SqlDataAdapter();
         DataTable dt1 = new DataTable();
-        SqlCommand cmd1;
+        //SqlCommand cmd1;
 
 
         //link database của Huy
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
 
         //link database của Hoàng
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
 
         //Link Database Cuyên
-        //SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
+        SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
 
         public string msv;
         public string mk;
 
         int i;
-        private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
-        private Label label6;
         private Label label7;
-        private Label label8;
-        private Label lbMin;
-        private Label lbSec;
-        private Label label12;
         private Label lbA;
         private Label lbB;
         private Label lbC;
@@ -163,7 +157,16 @@ namespace DangNhap
         private Label NoiDungCauHoi;
         private Label label60;
         private DataGridView grdData5;
-        private Label label1;
+        private BackgroundWorker backgroundWorker1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private Label label6;
+        private Label lbMin;
+        private Label label12;
+        private Label lbSec;
+        private GroupBox grbTimes;
+        private Label label8;
+        private Label label61;
 
         public FormGiaoDienThi()
         {
@@ -173,17 +176,10 @@ namespace DangNhap
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGiaoDienThi));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lbMin = new System.Windows.Forms.Label();
-            this.lbSec = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.lbA = new System.Windows.Forms.Label();
             this.lbB = new System.Windows.Forms.Label();
             this.lbC = new System.Windows.Forms.Label();
@@ -302,6 +298,16 @@ namespace DangNhap
             this.NoiDungCauHoi = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.grdData5 = new System.Windows.Forms.DataGridView();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbMin = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lbSec = new System.Windows.Forms.Label();
+            this.grbTimes = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdData1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -315,47 +321,29 @@ namespace DangNhap
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdData5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.grbTimes.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(264, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã sinh viên: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(201, 46);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Họ và tên:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(145, 65);
+            this.label3.Location = new System.Drawing.Point(195, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 46);
             this.label3.TabIndex = 2;
             this.label3.Text = "ht";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(184, 9);
+            this.label4.Location = new System.Drawing.Point(227, 204);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 46);
             this.label4.TabIndex = 3;
@@ -366,79 +354,28 @@ namespace DangNhap
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(558, 9);
+            this.label5.Location = new System.Drawing.Point(608, 149);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(208, 46);
             this.label5.TabIndex = 4;
             this.label5.Text = "Ngày sinh:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(558, 65);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(162, 46);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Môn thi:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(695, 9);
+            this.label7.Location = new System.Drawing.Point(745, 149);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 46);
             this.label7.TabIndex = 6;
             this.label7.Text = "ns";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1060, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(183, 40);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Thời Gian:";
-            // 
-            // lbMin
-            // 
-            this.lbMin.AutoSize = true;
-            this.lbMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMin.Location = new System.Drawing.Point(1077, 65);
-            this.lbMin.Name = "lbMin";
-            this.lbMin.Size = new System.Drawing.Size(75, 40);
-            this.lbMin.TabIndex = 9;
-            this.lbMin.Text = "min";
-            // 
-            // lbSec
-            // 
-            this.lbSec.AutoSize = true;
-            this.lbSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSec.Location = new System.Drawing.Point(1117, 65);
-            this.lbSec.Name = "lbSec";
-            this.lbSec.Size = new System.Drawing.Size(73, 40);
-            this.lbSec.TabIndex = 10;
-            this.lbSec.Text = "sec";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1102, 65);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(27, 40);
-            this.label12.TabIndex = 11;
-            this.label12.Text = ":";
-            // 
             // lbA
             // 
             this.lbA.AutoSize = true;
             this.lbA.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbA.Location = new System.Drawing.Point(43, 288);
+            this.lbA.Location = new System.Drawing.Point(80, 365);
             this.lbA.Name = "lbA";
             this.lbA.Size = new System.Drawing.Size(48, 37);
             this.lbA.TabIndex = 13;
@@ -448,7 +385,7 @@ namespace DangNhap
             // 
             this.lbB.AutoSize = true;
             this.lbB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbB.Location = new System.Drawing.Point(42, 366);
+            this.lbB.Location = new System.Drawing.Point(79, 443);
             this.lbB.Name = "lbB";
             this.lbB.Size = new System.Drawing.Size(47, 37);
             this.lbB.TabIndex = 14;
@@ -458,7 +395,7 @@ namespace DangNhap
             // 
             this.lbC.AutoSize = true;
             this.lbC.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbC.Location = new System.Drawing.Point(42, 438);
+            this.lbC.Location = new System.Drawing.Point(79, 515);
             this.lbC.Name = "lbC";
             this.lbC.Size = new System.Drawing.Size(49, 37);
             this.lbC.TabIndex = 15;
@@ -468,7 +405,7 @@ namespace DangNhap
             // 
             this.lbD.AutoSize = true;
             this.lbD.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbD.Location = new System.Drawing.Point(43, 516);
+            this.lbD.Location = new System.Drawing.Point(80, 593);
             this.lbD.Name = "lbD";
             this.lbD.Size = new System.Drawing.Size(49, 37);
             this.lbD.TabIndex = 16;
@@ -478,7 +415,7 @@ namespace DangNhap
             // 
             this.lbAnsA.AutoSize = true;
             this.lbAnsA.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAnsA.Location = new System.Drawing.Point(98, 288);
+            this.lbAnsA.Location = new System.Drawing.Point(135, 365);
             this.lbAnsA.Name = "lbAnsA";
             this.lbAnsA.Size = new System.Drawing.Size(142, 37);
             this.lbAnsA.TabIndex = 17;
@@ -488,7 +425,7 @@ namespace DangNhap
             // 
             this.lbAnsB.AutoSize = true;
             this.lbAnsB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAnsB.Location = new System.Drawing.Point(98, 366);
+            this.lbAnsB.Location = new System.Drawing.Point(135, 443);
             this.lbAnsB.Name = "lbAnsB";
             this.lbAnsB.Size = new System.Drawing.Size(141, 37);
             this.lbAnsB.TabIndex = 18;
@@ -498,7 +435,7 @@ namespace DangNhap
             // 
             this.lbAnsC.AutoSize = true;
             this.lbAnsC.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAnsC.Location = new System.Drawing.Point(98, 438);
+            this.lbAnsC.Location = new System.Drawing.Point(135, 515);
             this.lbAnsC.Name = "lbAnsC";
             this.lbAnsC.Size = new System.Drawing.Size(143, 37);
             this.lbAnsC.TabIndex = 19;
@@ -508,7 +445,7 @@ namespace DangNhap
             // 
             this.lbAnsD.AutoSize = true;
             this.lbAnsD.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAnsD.Location = new System.Drawing.Point(98, 516);
+            this.lbAnsD.Location = new System.Drawing.Point(135, 593);
             this.lbAnsD.Name = "lbAnsD";
             this.lbAnsD.Size = new System.Drawing.Size(143, 37);
             this.lbAnsD.TabIndex = 20;
@@ -522,30 +459,30 @@ namespace DangNhap
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
+            this.textBox1.Location = new System.Drawing.Point(1, 138);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(991, 130);
+            this.textBox1.Size = new System.Drawing.Size(1046, 120);
             this.textBox1.TabIndex = 21;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // grdData1
             // 
             this.grdData1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdData1.Location = new System.Drawing.Point(259, 9);
+            this.grdData1.Location = new System.Drawing.Point(257, 149);
             this.grdData1.Name = "grdData1";
             this.grdData1.ReadOnly = true;
             this.grdData1.RowHeadersWidth = 62;
             this.grdData1.RowTemplate.Height = 28;
-            this.grdData1.Size = new System.Drawing.Size(430, 112);
+            this.grdData1.Size = new System.Drawing.Size(430, 109);
             this.grdData1.TabIndex = 22;
             this.grdData1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdData1_CellContentClick);
             // 
             // btPre
             // 
             this.btPre.BackColor = System.Drawing.Color.Orange;
-            this.btPre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPre.Location = new System.Drawing.Point(403, 604);
+            this.btPre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPre.Location = new System.Drawing.Point(739, 788);
             this.btPre.Name = "btPre";
             this.btPre.Size = new System.Drawing.Size(149, 44);
             this.btPre.TabIndex = 23;
@@ -556,8 +493,8 @@ namespace DangNhap
             // btNext
             // 
             this.btNext.BackColor = System.Drawing.Color.Orange;
-            this.btNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNext.Location = new System.Drawing.Point(679, 604);
+            this.btNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNext.Location = new System.Drawing.Point(910, 786);
             this.btNext.Name = "btNext";
             this.btNext.Size = new System.Drawing.Size(149, 44);
             this.btNext.TabIndex = 24;
@@ -568,8 +505,8 @@ namespace DangNhap
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Orange;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1084, 605);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1162, 786);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 44);
             this.button1.TabIndex = 25;
@@ -1042,10 +979,11 @@ namespace DangNhap
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(974, 136);
+            this.panel2.Location = new System.Drawing.Point(1046, 289);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(299, 456);
             this.panel2.TabIndex = 43;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel11
             // 
@@ -1729,7 +1667,7 @@ namespace DangNhap
             // 
             this.NoiDungCauHoi.AutoSize = true;
             this.NoiDungCauHoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoiDungCauHoi.Location = new System.Drawing.Point(12, 136);
+            this.NoiDungCauHoi.Location = new System.Drawing.Point(62, 289);
             this.NoiDungCauHoi.Name = "NoiDungCauHoi";
             this.NoiDungCauHoi.Size = new System.Drawing.Size(139, 46);
             this.NoiDungCauHoi.TabIndex = 44;
@@ -1741,25 +1679,131 @@ namespace DangNhap
             this.label60.AutoSize = true;
             this.label60.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(668, 65);
+            this.label60.Location = new System.Drawing.Point(721, 205);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(98, 46);
             this.label60.TabIndex = 46;
             this.label60.Text = "mon";
+            this.label60.Click += new System.EventHandler(this.label60_Click_1);
             // 
             // grdData5
             // 
             this.grdData5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdData5.Location = new System.Drawing.Point(772, 12);
+            this.grdData5.Location = new System.Drawing.Point(770, 149);
             this.grdData5.Name = "grdData5";
             this.grdData5.RowHeadersWidth = 62;
             this.grdData5.RowTemplate.Height = 28;
             this.grdData5.Size = new System.Drawing.Size(112, 81);
             this.grdData5.TabIndex = 47;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1285, 672);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(384, 177);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 49;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1, -46);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1484, 222);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 50;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(608, 205);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(162, 46);
+            this.label6.TabIndex = 51;
+            this.label6.Text = "Môn thi:";
+            // 
+            // lbMin
+            // 
+            this.lbMin.AutoSize = true;
+            this.lbMin.BackColor = System.Drawing.Color.Orange;
+            this.lbMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMin.Location = new System.Drawing.Point(76, 64);
+            this.lbMin.Name = "lbMin";
+            this.lbMin.Size = new System.Drawing.Size(84, 46);
+            this.lbMin.TabIndex = 9;
+            this.lbMin.Text = "min";
+            this.lbMin.Click += new System.EventHandler(this.lbMin_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Orange;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(102, 64);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(27, 40);
+            this.label12.TabIndex = 11;
+            this.label12.Text = ":";
+            // 
+            // lbSec
+            // 
+            this.lbSec.AutoSize = true;
+            this.lbSec.BackColor = System.Drawing.Color.Orange;
+            this.lbSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSec.Location = new System.Drawing.Point(117, 64);
+            this.lbSec.Name = "lbSec";
+            this.lbSec.Size = new System.Drawing.Size(83, 46);
+            this.lbSec.TabIndex = 10;
+            this.lbSec.Text = "sec";
+            // 
+            // grbTimes
+            // 
+            this.grbTimes.BackColor = System.Drawing.Color.Orange;
+            this.grbTimes.Controls.Add(this.lbSec);
+            this.grbTimes.Controls.Add(this.label12);
+            this.grbTimes.Controls.Add(this.lbMin);
+            this.grbTimes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbTimes.Location = new System.Drawing.Point(1068, 140);
+            this.grbTimes.Name = "grbTimes";
+            this.grbTimes.Size = new System.Drawing.Size(244, 118);
+            this.grbTimes.TabIndex = 48;
+            this.grbTimes.TabStop = false;
+            this.grbTimes.Text = "Thời gian";
+            this.grbTimes.Enter += new System.EventHandler(this.grbTimes_Enter);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(62, 204);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(264, 46);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Mã sinh viên: ";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label61.Location = new System.Drawing.Point(62, 149);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(201, 46);
+            this.label61.TabIndex = 1;
+            this.label61.Text = "Họ và tên:";
+            this.label61.Click += new System.EventHandler(this.label61_Click);
+            // 
             // FormGiaoDienThi
             // 
-            this.ClientSize = new System.Drawing.Size(1320, 723);
+            this.ClientSize = new System.Drawing.Size(1495, 939);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label60);
             this.Controls.Add(this.NoiDungCauHoi);
             this.Controls.Add(this.button1);
@@ -1773,21 +1817,20 @@ namespace DangNhap
             this.Controls.Add(this.lbC);
             this.Controls.Add(this.lbB);
             this.Controls.Add(this.lbA);
-            this.Controls.Add(this.lbSec);
-            this.Controls.Add(this.lbMin);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label61);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.grdData1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.grdData5);
+            this.Controls.Add(this.grbTimes);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormGiaoDienThi";
             this.Text = "Bài kiểm tra";
@@ -1816,6 +1859,10 @@ namespace DangNhap
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdData5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.grbTimes.ResumeLayout(false);
+            this.grbTimes.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2720,6 +2767,41 @@ namespace DangNhap
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbMin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label60_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grbTimes_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label61_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

@@ -17,10 +17,10 @@ namespace DangNhap
 
 
         //link database của Hoàng
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
 
         //Link Database Cuyên
-        //SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
+        SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
 
 
         SqlCommand cmd;
@@ -115,9 +115,15 @@ namespace DangNhap
         private void grd1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+
         }
 
         private void txtMand_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
