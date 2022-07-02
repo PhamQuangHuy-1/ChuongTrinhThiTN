@@ -25,7 +25,8 @@ namespace DangNhap
         DataTable dt1 = new DataTable();
         string MND;
         string mk;
-      
+        SqlCommand cmd;
+
         public FrmShowDiem()
         {
             InitializeComponent();
@@ -33,6 +34,9 @@ namespace DangNhap
 
         private void button1_Click(object sender, EventArgs e)
         {
+            cmd = conn.CreateCommand();
+            cmd.CommandText = "update NguoiDung set Password = null where MaND = '"+MND+"' ";
+            cmd.ExecuteNonQuery();
             Application.Exit();
         }
         public FrmShowDiem(string Message1,string Message2) : this()

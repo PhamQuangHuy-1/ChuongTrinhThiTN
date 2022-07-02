@@ -1955,29 +1955,24 @@ namespace DangNhap
             if (MessageBox.Show("Bạn có muốn nộp bài thi hay không?", "Thông báo", MessageBoxButtons.YesNo) ==DialogResult.Yes)
             {
                 timer1.Stop();
-                CapNhatDiem();
-                              
+                CapNhatDiem();                          
             }
             dd.ShowDialog();
         }
        
         public void CapNhatDiem()
         {
-
-
             //string updatediem = "update KetQua set SoDiem= (select count(TraLoi) as 'SoDiem' from BaiLam, CauHoi, Mon where BaiLam.MaCH= CauHoi.MaCH and Mon.MaMon=CauHoi.MaMon and BaiLam.TraLoi=CauHoi.DapAn and MaND = '"+msv+"' and TraLoi is not null) where MaND = '"+msv+"' ";
-            string updatediem1 = "update KetQua set SoDiem = (select count(TraLoi) as 'SoDiem' from BaiLam, CauHoi  where BaiLam.MaCH= CauHoi.MaCH and BaiLam.TraLoi=CauHoi.DapAn and MaND = '11201581' and BaiLam.MaMon='"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"' and TraLoi is not null) where MaND = '11201581' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'";
+            string updatediem1 = "update KetQua set SoDiem = (select count(TraLoi) as 'SoDiem' from BaiLam, CauHoi  where BaiLam.MaCH= CauHoi.MaCH and BaiLam.TraLoi=CauHoi.DapAn and MaND = '"+msv+"' and BaiLam.MaMon='"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"' and TraLoi is not null) where MaND = '"+msv+"' and MaMon = '"+grdData1.Rows[0].Cells["MaMon"].Value.ToString()+"'";
                 cmd = conn.CreateCommand();
                 cmd.CommandText= updatediem1;
-                cmd.ExecuteNonQuery();
-            
+                cmd.ExecuteNonQuery();          
         }
        
         private void label60_Click(object sender, EventArgs e)
         {
             NoiDungCauHoi.Height=143;
             NoiDungCauHoi.Width=982;
-
         }
 
         private void panel1_Click(object sender, EventArgs e)
