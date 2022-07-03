@@ -70,6 +70,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
+    <Compile Include="BaocaoMon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaocaoMon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FrmXuatCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>KQKT.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="FormDangNhap.cs">
       <SubType>Form</SubType>
@@ -139,6 +146,10 @@
     <Compile Include="XuatKQ.Designer.cs">
       <DependentUpon>XuatKQ.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BaocaoMon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BaocaoMon.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmXuatCauHoi.resx">
       <DependentUpon>FrmXuatCauHoi.cs</DependentUpon>
     </EmbeddedResource>

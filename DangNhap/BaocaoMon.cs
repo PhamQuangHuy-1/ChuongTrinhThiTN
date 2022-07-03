@@ -16,14 +16,14 @@ namespace DangNhap {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class KQKT : ReportClass {
+    public class BaocaoMon : ReportClass {
         
-        public KQKT() {
+        public BaocaoMon() {
         }
         
         public override string ResourceName {
             get {
-                return "KQKT.rpt";
+                return "BaocaoMon.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace DangNhap {
         
         public override string FullResourceName {
             get {
-                return "DangNhap.KQKT.rpt";
+                return "DangNhap.BaocaoMon.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace DangNhap {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedKQKT : Component, ICachedReport {
+    public class CachedBaocaoMon : Component, ICachedReport {
         
-        public CachedKQKT() {
+        public CachedBaocaoMon() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace DangNhap {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            KQKT rpt = new KQKT();
+            BaocaoMon rpt = new BaocaoMon();
             rpt.Site = this.Site;
             return rpt;
         }

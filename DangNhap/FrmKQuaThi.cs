@@ -100,6 +100,9 @@ namespace DangNhap
             button3.Visible=true;
         }
 
-       
+        private void grdData6_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

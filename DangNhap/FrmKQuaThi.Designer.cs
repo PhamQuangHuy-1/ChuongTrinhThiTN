@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKQuaThi));
             this.grdData5 = new System.Windows.Forms.DataGridView();
             this.MaND = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,35 +54,35 @@
             // 
             // grdData5
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdData5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdData5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.grdData5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdData5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaND,
             this.MaMon,
             this.ExamID,
             this.SoDiem});
-            this.grdData5.Location = new System.Drawing.Point(221, 339);
+            this.grdData5.Location = new System.Drawing.Point(57, 215);
             this.grdData5.Name = "grdData5";
             this.grdData5.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.grdData5.RowHeadersWidth = 62;
             this.grdData5.RowTemplate.Height = 28;
-            this.grdData5.Size = new System.Drawing.Size(1754, 688);
+            this.grdData5.Size = new System.Drawing.Size(1019, 454);
             this.grdData5.TabIndex = 0;
             // 
             // MaND
             // 
             this.MaND.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.MaND.DataPropertyName = "MaND";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaND.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaND.DefaultCellStyle = dataGridViewCellStyle12;
             this.MaND.HeaderText = "Mã Sinh Viên";
             this.MaND.MinimumWidth = 12;
             this.MaND.Name = "MaND";
@@ -92,9 +92,9 @@
             // 
             this.MaMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.MaMon.DataPropertyName = "MaMon";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaMon.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaMon.DefaultCellStyle = dataGridViewCellStyle13;
             this.MaMon.HeaderText = "Mã Môn";
             this.MaMon.MinimumWidth = 8;
             this.MaMon.Name = "MaMon";
@@ -104,9 +104,9 @@
             // 
             this.ExamID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ExamID.DataPropertyName = "ExamID";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExamID.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExamID.DefaultCellStyle = dataGridViewCellStyle14;
             this.ExamID.HeaderText = "ExamID";
             this.ExamID.MinimumWidth = 8;
             this.ExamID.Name = "ExamID";
@@ -116,9 +116,9 @@
             // 
             this.SoDiem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.SoDiem.DataPropertyName = "SoDiem";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SoDiem.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SoDiem.DefaultCellStyle = dataGridViewCellStyle15;
             this.SoDiem.HeaderText = "Số Điểm";
             this.SoDiem.MinimumWidth = 8;
             this.SoDiem.Name = "SoDiem";
@@ -130,10 +130,10 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Navy;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1822, 1138);
+            this.button1.Location = new System.Drawing.Point(952, 676);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 48);
+            this.button1.Size = new System.Drawing.Size(124, 48);
             this.button1.TabIndex = 14;
             this.button1.Text = "Thoát";
             this.button1.UseVisualStyleBackColor = false;
@@ -143,9 +143,9 @@
             // 
             this.btnXuatBang.BackColor = System.Drawing.Color.Orange;
             this.btnXuatBang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatBang.Location = new System.Drawing.Point(660, 1139);
+            this.btnXuatBang.Location = new System.Drawing.Point(426, 688);
             this.btnXuatBang.Name = "btnXuatBang";
-            this.btnXuatBang.Size = new System.Drawing.Size(244, 47);
+            this.btnXuatBang.Size = new System.Drawing.Size(193, 47);
             this.btnXuatBang.TabIndex = 15;
             this.btnXuatBang.Text = "Xuất bảng điểm";
             this.btnXuatBang.UseVisualStyleBackColor = false;
@@ -155,9 +155,9 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Orange;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(378, 1139);
+            this.button3.Location = new System.Drawing.Point(176, 688);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(261, 47);
+            this.button3.Size = new System.Drawing.Size(244, 47);
             this.button3.TabIndex = 16;
             this.button3.Text = "Xem chi tiết bài làm";
             this.button3.UseVisualStyleBackColor = false;
@@ -168,12 +168,13 @@
             this.grdData6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdData6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaBL});
-            this.grdData6.Location = new System.Drawing.Point(604, 339);
+            this.grdData6.Location = new System.Drawing.Point(119, 278);
             this.grdData6.Name = "grdData6";
             this.grdData6.RowHeadersWidth = 62;
             this.grdData6.RowTemplate.Height = 28;
-            this.grdData6.Size = new System.Drawing.Size(1007, 466);
+            this.grdData6.Size = new System.Drawing.Size(901, 391);
             this.grdData6.TabIndex = 17;
+            this.grdData6.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdData6_CellContentClick);
             // 
             // MaBL
             // 
@@ -187,9 +188,9 @@
             // 
             this.button4.BackColor = System.Drawing.Color.Orange;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(219, 1139);
+            this.button4.Location = new System.Drawing.Point(56, 688);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(134, 47);
+            this.button4.Size = new System.Drawing.Size(114, 47);
             this.button4.TabIndex = 18;
             this.button4.Text = "Quay lại";
             this.button4.UseVisualStyleBackColor = false;
@@ -198,19 +199,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(996, 277);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(428, 160);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(280, 46);
+            this.label1.Size = new System.Drawing.Size(229, 37);
             this.label1.TabIndex = 52;
             this.label1.Text = "KẾT QUẢ THI";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-15, -107);
+            this.pictureBox2.Location = new System.Drawing.Point(-49, -1);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(2247, 431);
+            this.pictureBox2.Size = new System.Drawing.Size(1269, 118);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 54;
             this.pictureBox2.TabStop = false;
@@ -220,7 +221,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(2204, 1370);
+            this.ClientSize = new System.Drawing.Size(1171, 801);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
