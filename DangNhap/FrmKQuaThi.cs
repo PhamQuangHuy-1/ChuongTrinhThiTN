@@ -17,18 +17,20 @@ namespace DangNhap
 
 
         //link database của Hoàng
-        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
 
         //Link Database Cuyên
-        SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
+        //SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
         SqlDataAdapter da2 = new SqlDataAdapter();
-        
+        SqlDataAdapter da = new SqlDataAdapter();
         SqlDataAdapter da3 = new SqlDataAdapter();
         SqlDataAdapter da4 = new SqlDataAdapter();
         DataTable dt2 = new DataTable();
         DataTable dt3 = new DataTable();
         DataTable dt4 = new DataTable();
-        
+        DataTable dt = new DataTable();
+        DataTable dtBC = new DataTable();
+
 
         int i;
         public FrmKQuaThi()
@@ -45,6 +47,7 @@ namespace DangNhap
             dt3.Clear();
             da3.Fill(dt3);
             grdData5.DataSource= dt3;
+            button4.Visible=false;
             
         }
             
@@ -57,7 +60,7 @@ namespace DangNhap
         {
             conn.Close();
             conn.Open();
-            string t = "select NguoiDung.Ten,NguoiDung.MaND,Mon.TenMon,Exam.Ten, SoDiem from NguoiDung, Mon,Exam,KetQua where NguoiDung.MaQND='1' and KetQua.MaMon=Mon.MaMon and KetQua.ExamID=Exam.ExamID and KetQua.MaND= NguoiDung.MaND";
+            string t = "select NguoiDung.Ten,NguoiDung.MaND,KetQua.TenMon, SoDiem from NguoiDung,KetQua where NguoiDung.MaQND='1' and KetQua.MaND= NguoiDung.MaND and KetQua.MaMon='"+comGT.Text+"'";            
             da2 = new SqlDataAdapter(t, conn);
             dt2 = new DataTable();
             dt2.Clear();
@@ -65,9 +68,23 @@ namespace DangNhap
 
             KQKT baocao = new KQKT();
             baocao.SetDataSource(dt2);
+            
 
             XuatKQ frm = new XuatKQ();
             frm.Show();
+            //string sql = "Select NguoiDung.Ten,NguoiDung.MaND,KetQua.TenMon,SoDiem from KetQua,NguoiDung " +
+            //    "where " + comTenTruong.Text + "='" + comGT.Text + "'";
+            //da2= new SqlDataAdapter(sql, conn);
+            //dtBC = new DataTable();
+            //dtBC.Clear();
+            //da2.Fill(dtBC);
+            //KQKT bc = new KQKT();
+            //bc.SetDataSource(dtBC);
+            ////bc.DataDefinition.FormulaFields["Tentruong"].Text = "'" + comTenTruong.Text + "'";
+            ////bc.DataDefinition.FormulaFields["Giatri"].Text = "'" + comGT.Text + "'";
+            //XuatKQ f = new XuatKQ();
+            //f.Show();
+
 
         }
 
@@ -103,6 +120,59 @@ namespace DangNhap
         private void grdData6_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            string sql = "Select Distinct " + comTenTruong.Text + " From KetQua ";
+            DataTable dt = new DataTable();
+            da = new SqlDataAdapter(sql, conn);
+            dt.Clear();
+            da.Fill(dt);
+            comGT.DataSource = dt;
+            comGT.DisplayMember = comTenTruong.Text;
+            comGT.ValueMember = comTenTruong.Text;
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            dt.Clear();
+            string sql = "Select * From KetQua where " + comTenTruong.Text + "='" + comGT.Text + "'";
+            da = new SqlDataAdapter(sql, conn);
+            da.Fill(dt);
+            grdData5.DataSource = dt;
+            grdData5.Refresh();
+            //MaND,KetQua.MaMon,ExamID,SoDiem
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string sql = "Select * From KetQua";
+            da = new SqlDataAdapter(sql, conn);
+            dt.Clear();
+            da.Fill(dt);
+            grdData5.DataSource = dt;
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            conn.Close();
+            conn.Open();
+            string o = "select TenMon, MaMon, DiemTB from Mon ";
+            da2 = new SqlDataAdapter(o, conn);
+            dt2 = new DataTable();
+            dt2.Clear();
+            da2.Fill(dt2);
+
+            BaocaoMon baocao = new BaocaoMon();
+            baocao.SetDataSource(dt2);
+
+            FrmDiemTBcacMon1 frm = new FrmDiemTBcacMon1();
+            frm.Show();
         }
     }
 }

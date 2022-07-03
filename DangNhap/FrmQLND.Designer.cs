@@ -286,7 +286,7 @@ namespace DangNhap
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1284, 938);
+            this.ClientSize = new System.Drawing.Size(1284, 946);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button4);
@@ -300,7 +300,6 @@ namespace DangNhap
             this.Name = "FrmQLND";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý người dùng";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmQLND_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmQLND_KeyDown);
             this.groupBox1.ResumeLayout(false);

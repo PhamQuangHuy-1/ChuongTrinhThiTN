@@ -76,6 +76,12 @@
       <DependentUpon>BaocaoMon.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FrmDiemTBcacMon1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDiemTBcacMon1.Designer.cs">
+      <DependentUpon>FrmDiemTBcacMon1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmXuatCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLCH.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="KQKT.cs">
       <AutoGen>True</AutoGen>
@@ -149,6 +156,9 @@
     <EmbeddedResource Include="BaocaoMon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BaocaoMon.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDiemTBcacMon1.resx">
+      <DependentUpon>FrmDiemTBcacMon1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmXuatCauHoi.resx">
       <DependentUpon>FrmXuatCauHoi.cs</DependentUpon>

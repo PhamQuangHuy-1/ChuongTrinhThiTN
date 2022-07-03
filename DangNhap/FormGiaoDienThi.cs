@@ -25,10 +25,10 @@ namespace DangNhap
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9GAKJV7\SQLEXPRESS01;Initial Catalog=Exam;Integrated Security=True");
 
         //link database của Hoàng
-        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-KJNF2QE\SQLEXPRESS;Initial Catalog=Exam;Integrated Security=True");
 
         //Link Database Cuyên
-        SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
+        //SqlConnection conn = new SqlConnection(@"Data Source = CUYEN\CUYEN; Initial Catalog = ExamData; Integrated Security = True");
 
         public string msv;
         public string mk;
@@ -166,6 +166,7 @@ namespace DangNhap
         private Label lbSec;
         private GroupBox grbTimes;
         private Label label8;
+        private Label label1;
         private Label label61;
 
         public FormGiaoDienThi()
@@ -306,6 +307,7 @@ namespace DangNhap
             this.label12 = new System.Windows.Forms.Label();
             this.lbSec = new System.Windows.Forms.Label();
             this.grbTimes = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdData1)).BeginInit();
@@ -331,7 +333,7 @@ namespace DangNhap
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(195, 149);
+            this.label3.Location = new System.Drawing.Point(185, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 46);
             this.label3.TabIndex = 2;
@@ -343,7 +345,7 @@ namespace DangNhap
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(227, 204);
+            this.label4.Location = new System.Drawing.Point(215, 174);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 46);
             this.label4.TabIndex = 3;
@@ -354,7 +356,7 @@ namespace DangNhap
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(608, 149);
+            this.label5.Location = new System.Drawing.Point(531, 127);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(208, 46);
             this.label5.TabIndex = 4;
@@ -365,7 +367,7 @@ namespace DangNhap
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(745, 149);
+            this.label7.Location = new System.Drawing.Point(672, 127);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 46);
             this.label7.TabIndex = 6;
@@ -375,7 +377,7 @@ namespace DangNhap
             // 
             this.lbA.AutoSize = true;
             this.lbA.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbA.Location = new System.Drawing.Point(80, 365);
+            this.lbA.Location = new System.Drawing.Point(78, 319);
             this.lbA.Name = "lbA";
             this.lbA.Size = new System.Drawing.Size(48, 37);
             this.lbA.TabIndex = 13;
@@ -385,7 +387,7 @@ namespace DangNhap
             // 
             this.lbB.AutoSize = true;
             this.lbB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbB.Location = new System.Drawing.Point(79, 443);
+            this.lbB.Location = new System.Drawing.Point(79, 374);
             this.lbB.Name = "lbB";
             this.lbB.Size = new System.Drawing.Size(47, 37);
             this.lbB.TabIndex = 14;
@@ -395,7 +397,7 @@ namespace DangNhap
             // 
             this.lbC.AutoSize = true;
             this.lbC.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbC.Location = new System.Drawing.Point(79, 515);
+            this.lbC.Location = new System.Drawing.Point(78, 429);
             this.lbC.Name = "lbC";
             this.lbC.Size = new System.Drawing.Size(49, 37);
             this.lbC.TabIndex = 15;
@@ -405,7 +407,7 @@ namespace DangNhap
             // 
             this.lbD.AutoSize = true;
             this.lbD.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbD.Location = new System.Drawing.Point(80, 593);
+            this.lbD.Location = new System.Drawing.Point(79, 484);
             this.lbD.Name = "lbD";
             this.lbD.Size = new System.Drawing.Size(49, 37);
             this.lbD.TabIndex = 16;
@@ -415,7 +417,7 @@ namespace DangNhap
             // 
             this.lbAnsA.AutoSize = true;
             this.lbAnsA.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAnsA.Location = new System.Drawing.Point(135, 365);
+            this.lbAnsA.Location = new System.Drawing.Point(132, 319);
             this.lbAnsA.Name = "lbAnsA";
             this.lbAnsA.Size = new System.Drawing.Size(142, 37);
             this.lbAnsA.TabIndex = 17;
@@ -425,7 +427,7 @@ namespace DangNhap
             // 
             this.lbAnsB.AutoSize = true;
             this.lbAnsB.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAnsB.Location = new System.Drawing.Point(135, 443);
+            this.lbAnsB.Location = new System.Drawing.Point(132, 374);
             this.lbAnsB.Name = "lbAnsB";
             this.lbAnsB.Size = new System.Drawing.Size(141, 37);
             this.lbAnsB.TabIndex = 18;
@@ -435,7 +437,7 @@ namespace DangNhap
             // 
             this.lbAnsC.AutoSize = true;
             this.lbAnsC.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAnsC.Location = new System.Drawing.Point(135, 515);
+            this.lbAnsC.Location = new System.Drawing.Point(132, 429);
             this.lbAnsC.Name = "lbAnsC";
             this.lbAnsC.Size = new System.Drawing.Size(143, 37);
             this.lbAnsC.TabIndex = 19;
@@ -445,7 +447,7 @@ namespace DangNhap
             // 
             this.lbAnsD.AutoSize = true;
             this.lbAnsD.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAnsD.Location = new System.Drawing.Point(135, 593);
+            this.lbAnsD.Location = new System.Drawing.Point(132, 484);
             this.lbAnsD.Name = "lbAnsD";
             this.lbAnsD.Size = new System.Drawing.Size(143, 37);
             this.lbAnsD.TabIndex = 20;
@@ -459,17 +461,17 @@ namespace DangNhap
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.textBox1.Location = new System.Drawing.Point(1, 138);
+            this.textBox1.Location = new System.Drawing.Point(1, 110);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1046, 120);
+            this.textBox1.Size = new System.Drawing.Size(970, 120);
             this.textBox1.TabIndex = 21;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // grdData1
             // 
             this.grdData1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdData1.Location = new System.Drawing.Point(257, 149);
+            this.grdData1.Location = new System.Drawing.Point(257, 113);
             this.grdData1.Name = "grdData1";
             this.grdData1.ReadOnly = true;
             this.grdData1.RowHeadersWidth = 62;
@@ -482,7 +484,7 @@ namespace DangNhap
             // 
             this.btPre.BackColor = System.Drawing.Color.Orange;
             this.btPre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPre.Location = new System.Drawing.Point(739, 788);
+            this.btPre.Location = new System.Drawing.Point(463, 574);
             this.btPre.Name = "btPre";
             this.btPre.Size = new System.Drawing.Size(149, 44);
             this.btPre.TabIndex = 23;
@@ -494,7 +496,7 @@ namespace DangNhap
             // 
             this.btNext.BackColor = System.Drawing.Color.Orange;
             this.btNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNext.Location = new System.Drawing.Point(910, 786);
+            this.btNext.Location = new System.Drawing.Point(699, 574);
             this.btNext.Name = "btNext";
             this.btNext.Size = new System.Drawing.Size(149, 44);
             this.btNext.TabIndex = 24;
@@ -506,7 +508,7 @@ namespace DangNhap
             // 
             this.button1.BackColor = System.Drawing.Color.Orange;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1162, 786);
+            this.button1.Location = new System.Drawing.Point(1036, 607);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 44);
             this.button1.TabIndex = 25;
@@ -979,9 +981,9 @@ namespace DangNhap
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(1046, 289);
+            this.panel2.Location = new System.Drawing.Point(970, 264);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(299, 456);
+            this.panel2.Size = new System.Drawing.Size(299, 337);
             this.panel2.TabIndex = 43;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -1667,7 +1669,7 @@ namespace DangNhap
             // 
             this.NoiDungCauHoi.AutoSize = true;
             this.NoiDungCauHoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoiDungCauHoi.Location = new System.Drawing.Point(62, 289);
+            this.NoiDungCauHoi.Location = new System.Drawing.Point(54, 253);
             this.NoiDungCauHoi.Name = "NoiDungCauHoi";
             this.NoiDungCauHoi.Size = new System.Drawing.Size(139, 46);
             this.NoiDungCauHoi.TabIndex = 44;
@@ -1679,7 +1681,7 @@ namespace DangNhap
             this.label60.AutoSize = true;
             this.label60.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(721, 205);
+            this.label60.Location = new System.Drawing.Point(636, 174);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(98, 46);
             this.label60.TabIndex = 46;
@@ -1699,9 +1701,9 @@ namespace DangNhap
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1285, 672);
+            this.pictureBox1.Location = new System.Drawing.Point(156, 542);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(384, 177);
+            this.pictureBox1.Size = new System.Drawing.Size(266, 177);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 49;
             this.pictureBox1.TabStop = false;
@@ -1710,9 +1712,9 @@ namespace DangNhap
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1, -46);
+            this.pictureBox2.Location = new System.Drawing.Point(10, -32);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1484, 222);
+            this.pictureBox2.Size = new System.Drawing.Size(1213, 202);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 50;
             this.pictureBox2.TabStop = false;
@@ -1722,7 +1724,7 @@ namespace DangNhap
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(608, 205);
+            this.label6.Location = new System.Drawing.Point(531, 176);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(162, 46);
             this.label6.TabIndex = 51;
@@ -1765,24 +1767,33 @@ namespace DangNhap
             // grbTimes
             // 
             this.grbTimes.BackColor = System.Drawing.Color.Orange;
+            this.grbTimes.Controls.Add(this.label1);
             this.grbTimes.Controls.Add(this.lbSec);
             this.grbTimes.Controls.Add(this.label12);
             this.grbTimes.Controls.Add(this.lbMin);
             this.grbTimes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbTimes.Location = new System.Drawing.Point(1068, 140);
+            this.grbTimes.Location = new System.Drawing.Point(979, 110);
             this.grbTimes.Name = "grbTimes";
-            this.grbTimes.Size = new System.Drawing.Size(244, 118);
+            this.grbTimes.Size = new System.Drawing.Size(259, 120);
             this.grbTimes.TabIndex = 48;
             this.grbTimes.TabStop = false;
-            this.grbTimes.Text = "Thời gian";
             this.grbTimes.Enter += new System.EventHandler(this.grbTimes_Enter);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(40, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(193, 40);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Thời Gian:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(62, 204);
+            this.label8.Location = new System.Drawing.Point(37, 174);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(264, 46);
             this.label8.TabIndex = 0;
@@ -1793,7 +1804,7 @@ namespace DangNhap
             this.label61.AutoSize = true;
             this.label61.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.Location = new System.Drawing.Point(62, 149);
+            this.label61.Location = new System.Drawing.Point(37, 127);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(201, 46);
             this.label61.TabIndex = 1;
@@ -1802,7 +1813,7 @@ namespace DangNhap
             // 
             // FormGiaoDienThi
             // 
-            this.ClientSize = new System.Drawing.Size(1495, 939);
+            this.ClientSize = new System.Drawing.Size(1275, 827);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label60);
             this.Controls.Add(this.NoiDungCauHoi);
@@ -1812,6 +1823,7 @@ namespace DangNhap
             this.Controls.Add(this.lbAnsD);
             this.Controls.Add(this.lbAnsC);
             this.Controls.Add(this.lbAnsB);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbAnsA);
             this.Controls.Add(this.lbD);
             this.Controls.Add(this.lbC);
@@ -1828,7 +1840,6 @@ namespace DangNhap
             this.Controls.Add(this.grdData5);
             this.Controls.Add(this.grbTimes);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2002,7 +2013,8 @@ namespace DangNhap
             if (MessageBox.Show("Bạn có muốn nộp bài thi hay không?", "Thông báo", MessageBoxButtons.YesNo) ==DialogResult.Yes)
             {
                 timer1.Stop();
-                CapNhatDiem();                          
+                CapNhatDiem();
+                CapNhatDiemTB();
             }
             dd.ShowDialog();
         }
@@ -2015,6 +2027,14 @@ namespace DangNhap
                 cmd.CommandText= updatediem1;
                 cmd.ExecuteNonQuery();          
         }
+        public void CapNhatDiemTB()
+        {
+            string updateDiemtb = "update Mon set DiemTB = (select avg(SoDiem) as 'Diem tb' from KetQua, Mon where KetQua.MaMon=Mon.MaMon and Password = '"+mk+"' ) where Password = '"+mk+"'";
+            cmd = conn.CreateCommand();
+            cmd.CommandText= updateDiemtb;
+            cmd.ExecuteNonQuery();
+        }
+    
        
         private void label60_Click(object sender, EventArgs e)
         {
@@ -2805,5 +2825,7 @@ namespace DangNhap
         {
 
         }
+
+        
     }
 }
